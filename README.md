@@ -4,7 +4,7 @@
 
 - 在线图库：https://contione.github.io/moyu-gif/
 - 仓库：https://github.com/contione/moyu-gif
-- 首批 24 张多帧 GIF：打工日常、情绪发疯、快乐吃瓜、社交必备。
+- 24 张 ImageGen 原画制作的多帧 GIF：打工日常、情绪发疯、快乐吃瓜、社交必备，已整批替换旧版 OpenMoji 拼贴表情。
 - 支持中文搜索、分类筛选、本地收藏、随机抽取、预览切换、复制直链、单张与整包下载。
 - 移动端双列布局；关闭动效会切换静态预览；默认尊重系统「减少动态效果」。
 
@@ -63,17 +63,26 @@ rtk python scripts/package_site.py
 
 校验每张图确实有动画、路径安全且文件存在，更新 ZIP 并输出 `_site/`。部署仅发布站点文件，不发布生成脚本和原始素材目录。
 
-## 重新制作首批表情
+## 当前表情如何制作
 
-首批使用 **OpenMoji 开源角色和道具**，重新组合中文文案和动效，并非 AI 原创插画或从聊天记录提取的 GIF。原计划的 AI 生图在创建时因本机接口缺少凭据未能运行；没有伪装成已生成的 AI 作品。
+每张原画通过 ImageGen 官方 CLI 单独生成，指定模型 `gpt-image-2`，一次只处理一张。原始 PNG 保存在 `assets/source/`，完整风格提示和逐图场景见 `content/ai-batch-01-prompts.json`，批次清单见 `content/ai-batch-01.json`。
+
+**原画本身是静态 PNG，不是模型直接生成的视频。** 本地脚本为每张原画添加摇头、弹跳、震动、位移、烟雾等循环动效，以及固定中文字幕，输出真正包含不同帧的 320×320 GIF；同时导出 WebP 静态封面。网站播放和下载使用 GIF，关闭动效后才使用封面。当前批次没有使用旧 OpenMoji 图片作为输入。
+
+## 整批替换下一批原创表情
+
+1. 参考 `content/ai-batch-01.json` 制作 24 条新清单，使用全新的 ID；对应 PNG 命名为 `{id}.png`。
+2. 按提示词逐张调用 ImageGen，保留实际输出并目视检查，不要用重复图片凑数。
+3. 执行预检，通过后执行替换：
 
 ```powershell
-rtk python scripts/prepare_sheet.py
-rtk python scripts/build_gifs.py --sheet "C:/Users/你的用户名/Pictures/AI/moyu-source-时间/openmoji-sheet.png"
-rtk python scripts/package_site.py
+rtk python scripts/replace_ai_batch.py --images-dir "C:/path/to/new-images" --manifest "content/my-next-batch.json" --check-only
+rtk python scripts/replace_ai_batch.py --images-dir "C:/path/to/new-images" --manifest "content/my-next-batch.json"
 ```
 
-`prepare_sheet.py` 从 OpenMoji 官方仓库下载素材，并生成 6×4 拼贴。`build_gifs.py` 针对首批 24 格素材制作 320×320、多帧循环 GIF，正文字幕保持稳定；默认使用 Windows 微软雅黑粗体。其他系统传 `--font /path/to/ChineseFont.ttf`。如果已经添加额外表情，重新生成首批时应通过 `--manifest` 指定仅含原 24 条的清单，避免将不同素材顺序混用。图库自身支持任意数量的条目。
+脚本预检 24 张 PNG 的完整性、文件大小、尺寸、路径与 SHA256 去重，在隔离目录生成和校验 GIF 后才替换；随后移除旧清单引用的 GIF/封面并重建 ZIP。更新原画归档和 `ATTRIBUTION.md` 后提交推送。默认使用 Windows 微软雅黑粗体；其他系统传 `--font /path/to/ChineseFont.ttf`。
+
+生图用的 API 凭据只在本机配置，不得写入代码、提示词、清单、提交或构建产物。GitHub Actions 仅验证与发布现成图片，不调用付费生图接口。
 
 ## 部署与目录
 
@@ -84,7 +93,8 @@ index.html / styles.css / app.js   页面、样式、交互
 data/gifs.json                    唯一内容清单
 assets/gifs/                      动态 GIF
 assets/posters/                   静态预览
-assets/source/                    OpenMoji 原始素材
+assets/source/                    本批 ImageGen 原始 PNG
+content/                          生成提示词、批次清单与来源记录
 scripts/                         导入、生成与部署打包
 .github/workflows/pages.yml       自动发布
 ATTRIBUTION.md                    素材来源和授权
@@ -92,4 +102,4 @@ ATTRIBUTION.md                    素材来源和授权
 
 ## 授权和隐私
 
-OpenMoji 原始素材及衍生 GIF/预览图遵循 **CC BY-SA 4.0**，详见 [ATTRIBUTION.md](ATTRIBUTION.md)。公开分享与再创作请保留署名和相同许可证。项目没有分析跟踪脚本、没有服务端、没有 API 密钥；请勿将公司内部表情或含个人信息的图直接上传公开仓库。
+当前图片的生成来源见 [ATTRIBUTION.md](ATTRIBUTION.md)，不要将旧版 OpenMoji 的许可自动套用到新生成图上。历史版本中的 OpenMoji 素材仍应遵守其原许可证。项目没有分析跟踪脚本、没有服务端、没有 API 密钥；请勿将公司内部表情或含个人信息的图直接上传公开仓库。

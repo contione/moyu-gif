@@ -1,0 +1,31 @@
+{
+  "status": "image-generation-completed",
+  "execution": "24 actual PNGs produced using the official ImageGen CLI: one generate call followed by generate-batch with concurrency 1. Requested model gpt-image-2, quality high, size 1024x1024. Actual returned PNG dimensions are recorded in ai-batch-01-generation.json.",
+  "basePrompt": "Generate one square raster illustration for a funny original Chinese internet chat sticker. The recurring original character is a ridiculously chubby ivory-white office cat with three hairs, tiny pink ears, thick imperfect black hand-drawn outlines, short noodle limbs, and optional mint-green shirt. Goofy, endearingly ugly, wildly expressive, flat minimal colors, strong silhouette readable at tiny chat size. Not standard emoji, not a famous character, not a photo or interface. Solid pure white background. Center the complete character and props in the upper 75 percent, with at least 10 percent safe margins; leave bottom 25 percent plain white for a caption to be added later. No text, letters, numbers, logos or watermark. Each image is a standalone illustration, not a contact sheet. Return a real rendered PNG image.",
+  "items": [
+    {"id":"ai-cat-slacking","scene":"Cat slumped in an office chair with a tiny toy fishing rod secretly dipped into its coffee mug behind an open laptop. Half-closed cynical eyes, smug tiny grin, hilariously boneless posture."},
+    {"id":"ai-cat-what","scene":"Cat recoils so hard its tiny ears fly upright, mismatched giant eyeballs bulge, paws hold its cheeks, lower jaw drops almost to the floor. Total cartoon disbelief."},
+    {"id":"ai-cat-salute","scene":"Overly eager cat salutes with both paws simultaneously, one eye squished shut by its own paw, standing rigidly in an absurdly oversized office tie."},
+    {"id":"ai-cat-escape","scene":"Cat straps its entire tiny office desk and laptop onto its back and sprints away on comically spinning noodle legs. Desperate joyful escape face, loose tie flying behind."},
+    {"id":"ai-cat-shattered","scene":"Cat collapses into a few chunky puzzle-like pieces while a little translucent cat-shaped soul floats out of its mouth. Comical exhaustion, nonviolent and adorable, no injury."},
+    {"id":"ai-cat-fine","scene":"Cat politely smiles and gives an awkward thumbs up while a tiny absurd volcano erupts from the top of its head. Twitching eyebrow, huge forced grin, office meltdown humor."},
+    {"id":"ai-cat-popcorn","scene":"Cat is buried up to its neck in a bucket of popcorn, chin propped on paws, eyes gleefully widened at unfolding drama, mouth full and cheeks ridiculously swollen."},
+    {"id":"ai-cat-understands","scene":"Cat leans close with a conspiratorial squint, one enormous approving thumb near the viewer, crooked knowing grin, tiny reading glasses perched low on nose."},
+    {"id":"ai-cat-boss","scene":"Cat hides behind an absurdly small potted plant that conceals only its nose. Wide guilty eyes, frozen stiff paws gripping laptop, tail sticking out obviously."},
+    {"id":"ai-cat-wallet","scene":"Devastated cat holds an empty wallet wide open. One lonely fly emerges. Cat has hollow resigned eyes, ears droop, its other paw catches a single imaginary coin."},
+    {"id":"ai-cat-typing","scene":"Panicked cat furiously types on a smoking laptop using six motion-blurred tangled paws, mismatched frantic eyes, giant sweat drops, tiny terrified zigzag mouth."},
+    {"id":"ai-cat-calm","scene":"Cat sits perfectly upright in a tiny meditation pose wearing sunglasses, smiling far too calmly while a little office-paper tornado swirls around its head."},
+    {"id":"ai-cat-loading","scene":"Cat stares completely blankly. The top of its head opens like a harmless cartoon lid to reveal one miniature smoking hamster wheel with a sleepy tiny hamster. No gore."},
+    {"id":"ai-cat-really","scene":"Cat dramatically facepalms with an oversized paw, one eye peeking through its fingers, other paw pointing at a wildly tangled cable knot. Deadpan bewilderment."},
+    {"id":"ai-cat-hurray","scene":"Cat leaps upward in an absurd starfish pose, mouth huge with delight, eyes sparkling, tiny pink cheeks, paper streamers trailing from both paws."},
+    {"id":"ai-cat-clap","scene":"Cat slowly claps two tiny paws with a magnificently unimpressed face, one eyebrow extremely high, wearing an oversized bow tie. Comically sarcastic applause."},
+    {"id":"ai-cat-flat","scene":"Cat flattened like a puddle-shaped pancake on the floor, its head barely lifted and only two exhausted eyes looking sideways. Limp paws, tiny soul puff, adorable office burnout."},
+    {"id":"ai-cat-panic","scene":"Cat chases its own tail in a chaotic twisted running pose while balancing an absurd stack of papers. Spiral eyes, four motion-blurred feet, desperate panic."},
+    {"id":"ai-cat-coffee","scene":"Cat hugs a steaming coffee mug twice its own size, enormous black eyebags, trembling paws, tiny grateful smile and droopy ears. Coffee is an absurd life raft."},
+    {"id":"ai-cat-retired","scene":"Cat lounges sideways in a tiny office chair like a retired emperor, paws behind head, feet on a giant overturned briefcase, bored puckered face and loose tie."},
+    {"id":"ai-cat-gossip","scene":"Mischievous cat peeks from behind a watermelon larger than its body, huge curious eyes and sly eyebrows, one paw cups its ear, wicked delighted grin."},
+    {"id":"ai-cat-please","scene":"Cat kneels with paws clasped together, enormous watery pleading eyes, ears flattened, body folded into an absurdly humble begging pose, one tiny sweat bead."},
+    {"id":"ai-cat-thanks","scene":"Cat bows so deeply its round head almost touches its feet, holding a tiny red gift envelope overhead with both paws. Ecstatic bashful face peeks between its legs."},
+    {"id":"ai-cat-friday","scene":"Cat does a ridiculous energetic disco dance, loose office tie wrapped around its head, hips twisted, one paw points upward, eyes squeezed shut in pure joy, colorful confetti."}
+  ]
+}
