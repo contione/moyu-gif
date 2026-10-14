@@ -1,0 +1,21 @@
+{
+  "status": "image-generation-completed",
+  "mode": "reference-image-edit",
+  "reference": "User-provided white duck with black beret, huge round eyes and yellow beak. Original private image and its filesystem path are not published.",
+  "request": {"model":"gpt-image-2","quality":"high","size":"1024x1024","output_format":"png","concurrency":1},
+  "basePrompt": "Create ONE new square office reaction sticker based closely on the supplied reference duck. Preserve its round white body, huge round white eyes with tiny black pupils, floppy black beret, yellow-orange beak and thick dark slightly rough outline. This must be recognizably the same goofy duck, not a realistic bird or a different mascot. Flat simple 2D cartoon with minimal colors, absurdly expressive and funny, clear silhouette readable in a small chat message. Adapt the pose and props to the scene. Remove the original drink bottle except when the scene specifically requests a generic unbranded drink. Remove all brands and logos. Solid PURE WHITE background, not peach. Center the COMPLETE character and props in the upper 75 percent, leave at least 12 percent safe margins and the bottom 25 percent blank white for a Chinese caption to be added locally. No text, letters, numbers, watermark, grid or multiple panels. Only one duck. Scene: ",
+  "items": [
+    {"id":"duck-office-received","scene":"Duck stands at attention giving a hilariously over-serious wing salute, giant startled eyes, tiny blue office tie, other wing grips a tiny clipboard. Eager acknowledgment."},
+    {"id":"duck-office-arrange","scene":"Duck furiously organizes three brightly colored blank sticky notes and confidently slams an oversized rubber stamp onto a tiny desk, fierce absurdly determined stare, cap tilted."},
+    {"id":"duck-office-working","scene":"Duck furiously types on a small laptop, two wings flailing with drawn motion trails, enormous nervous eyes, tiny sweat drops, a ridiculous stack of blank papers beside it."},
+    {"id":"duck-office-align","scene":"Duck stands beside a tiny whiteboard showing only three simple colored geometric boxes connected by arrows, holds a pointer in one wing and pulls two misaligned boxes together with the other, intensely serious puzzled face."},
+    {"id":"duck-office-priority","scene":"Duck proudly holds one large bright red blank folder high above a comically teetering stack of small gray folders, round urgent eyes, free wing points decisively upward, little orange alarm bell at feet."},
+    {"id":"duck-office-chase","scene":"Duck leans forward nosily with bulging curious eyes and a magnifying glass, other wing holds a tiny clock with simple hands but no numbers, impatient yet cute exaggerated posture."},
+    {"id":"duck-office-confirm","scene":"Duck anxiously presents a blank paper on a clipboard with both wings toward the viewer, enormous pleading eyes and pursed beak, a comically large approval stamp waiting beside it, tiny sweat drop."},
+    {"id":"duck-office-delivered","scene":"Duck proudly pushes forward a neat closed mint-green folder carrying a large green checkmark symbol, cheeky satisfied eyes, one wing gives a triumphant thumbs-up-like feather gesture, tiny confetti pieces."},
+    {"id":"duck-office-fast","scene":"Duck rides a ridiculous small mint-green office-chair rocket with tiny orange flame, clutching a laptop, black beret held firmly on head, manic giant eyes and delighted beak, full vehicle visible."},
+    {"id":"duck-office-no-more","scene":"Duck hugs an absurdly tall stack of blank paperwork while raising one wing in a desperate stop gesture, tiny trembling legs, enormous haunted eyes, beret sliding sideways, very funny nonviolent office exhaustion."},
+    {"id":"duck-office-fuel","scene":"Duck rests one wing on a small office desk and tilts its head back to drink from a small dark soda bottle with a PLAIN red label, absolutely no lettering or branding. Keep the iconic blank wide-eyed stare and black beret from the reference; other side of desk has a closed laptop."},
+    {"id":"duck-office-off","scene":"Duck gleefully sprints away holding a tiny briefcase, other wing waves goodbye, one loose blue tie flies behind, black beret still on, exaggerated long running stride and thrilled giant eyes. Full body visible."}
+  ]
+}

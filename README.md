@@ -4,7 +4,8 @@
 
 - 在线图库：https://contione.github.io/moyu-gif/
 - 仓库：https://github.com/contione/moyu-gif
-- 24 张 ImageGen 原画制作的多帧 GIF：打工日常、情绪发疯、快乐吃瓜、社交必备，已整批替换旧版 OpenMoji 拼贴表情。
+- 36 张多帧 GIF：24 张原创打工猫＋12 张参考图衍生的黑帽鸭鸭。旧版 OpenMoji 拼贴表情已全部替换。
+- 搜索「鸭鸭」或「职场高效」直达新批次：收到、安排、催进度、等拍板、已交付、高效下班等。
 - 支持中文搜索、分类筛选、本地收藏、随机抽取、预览切换、复制直链、单张与整包下载。
 - 移动端双列布局；关闭动效会切换静态预览；默认尊重系统「减少动态效果」。
 
@@ -65,7 +66,9 @@ rtk python scripts/package_site.py
 
 ## 当前表情如何制作
 
-每张原画通过 ImageGen 官方 CLI 单独生成，指定模型 `gpt-image-2`，一次只处理一张。原始 PNG 保存在 `assets/source/`，完整风格提示和逐图场景见 `content/ai-batch-01-prompts.json`，批次清单见 `content/ai-batch-01.json`。
+每张原画通过 ImageGen 逐张生成或编辑，指定模型 `gpt-image-2`，一次只处理一张。24 张打工猫使用文字提示生成；12 张黑帽鸭鸭通过 Custom ImageGen 的 `edit` 模式参考用户提供的图片制作，不宣称鸭鸭角色为本项目原创。参考图原件和本机路径不发布到仓库。
+
+原始 PNG 保存在 `assets/source/`；猫猫提示词和清单见 `content/ai-batch-01-prompts.json`、`content/ai-batch-01.json`；鸭鸭对应 `content/duck-office-01-prompts.json`、`content/duck-office-01.json`。两个批次的 `*-generation.json` 记录实际尺寸及 SHA256。
 
 **原画本身是静态 PNG，不是模型直接生成的视频。** 本地脚本为每张原画添加摇头、弹跳、震动、位移、烟雾等循环动效，以及固定中文字幕，输出真正包含不同帧的 320×320 GIF；同时导出 WebP 静态封面。网站播放和下载使用 GIF，关闭动效后才使用封面。当前批次没有使用旧 OpenMoji 图片作为输入。
 
@@ -83,6 +86,17 @@ rtk python scripts/replace_ai_batch.py --images-dir "C:/path/to/new-images" --ma
 脚本预检 24 张 PNG 的完整性、文件大小、尺寸、路径与 SHA256 去重，在隔离目录生成和校验 GIF 后才替换；随后移除旧清单引用的 GIF/封面并重建 ZIP。更新原画归档和 `ATTRIBUTION.md` 后提交推送。默认使用 Windows 微软雅黑粗体；其他系统传 `--font /path/to/ChineseFont.ttf`。
 
 生图用的 API 凭据只在本机配置，不得写入代码、提示词、清单、提交或构建产物。GitHub Actions 仅验证与发布现成图片，不调用付费生图接口。
+
+## 新增一批，不替换现有表情
+
+准备同结构的清单以及 `{id}.png`，数量不限于 24 张，每个 ID 必须全新：
+
+```powershell
+rtk python scripts/append_ai_batch.py --images-dir "C:/path/to/new-images" --manifest "content/my-new-batch.json" --check-only
+rtk python scripts/append_ai_batch.py --images-dir "C:/path/to/new-images" --manifest "content/my-new-batch.json"
+```
+
+脚本先在隔离目录生成并验证动画，再追加原画、GIF、封面和清单，保留现有表情，重建全量 ZIP 与站点。不要使用整批替换脚本来执行追加。参考图的来源及允许用途仍需记录在 `ATTRIBUTION.md`。
 
 ## 部署与目录
 

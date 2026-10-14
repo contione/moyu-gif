@@ -1,0 +1,125 @@
+{
+  "status": "image-generation-completed",
+  "generation_local_date": "2026-10-14",
+  "mode": "reference-image-edit",
+  "tool": "Custom ImageGen wrapper delegating to the official ImageGen CLI",
+  "request": {
+    "model": "gpt-image-2",
+    "quality": "high",
+    "size": "1024x1024",
+    "output_format": "png",
+    "concurrency": 1
+  },
+  "reference": "The same user-provided duck image was submitted with each edit request. The original reference file, local path and account identifiers are not published. Rights to the reference character are not independently verified.",
+  "postprocessing": "ImageGen produced static PNG illustrations. Local scripts composite transparency onto white, add Chinese captions, and create looping animated GIFs plus static WebP posters. Original PNG bytes are preserved.",
+  "assets": [
+    {
+      "filename": "assets/source/duck-office-received.png",
+      "sha256": "a9c7af34d81c77e34f762642a05016636bfdc46599ce636141eac9722e00e1ba",
+      "actual_dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "mode": "RGBA"
+    },
+    {
+      "filename": "assets/source/duck-office-arrange.png",
+      "sha256": "94d0c6c955eff3e4bb37b8ef8c5a4d1e7e918c03ef24e1aa508fd95700c4dfff",
+      "actual_dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "mode": "RGBA"
+    },
+    {
+      "filename": "assets/source/duck-office-working.png",
+      "sha256": "f48901aafefa7a92a6916a8a799e12c4c4de6ae412a65b3bef1a72ae83cf703a",
+      "actual_dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "mode": "RGBA"
+    },
+    {
+      "filename": "assets/source/duck-office-align.png",
+      "sha256": "75aa2f7424282dc4b5887fe1257dbd6ac33ae5b656d524637000a4ee8a89befd",
+      "actual_dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "mode": "RGBA"
+    },
+    {
+      "filename": "assets/source/duck-office-priority.png",
+      "sha256": "409ba6ee01ec345c947da959cd44b27d85e1a3aa732b2e4f7ff2973378170392",
+      "actual_dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "mode": "RGBA"
+    },
+    {
+      "filename": "assets/source/duck-office-chase.png",
+      "sha256": "8a87eb66c30ea294b409c84f4b5fee2b5d15d4be5f9033889d95e01edcbeef4e",
+      "actual_dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "mode": "RGBA"
+    },
+    {
+      "filename": "assets/source/duck-office-confirm.png",
+      "sha256": "4e8e3d34934d6254d7d9a9aded0dbb6b8ee67c8f163134839cb7dd6a41a17aa1",
+      "actual_dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "mode": "RGBA"
+    },
+    {
+      "filename": "assets/source/duck-office-delivered.png",
+      "sha256": "034f2c5a6fac3e0a3e0812cc5235e2c9d8c00f4927fcde05560afe0eea616518",
+      "actual_dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "mode": "RGBA"
+    },
+    {
+      "filename": "assets/source/duck-office-fast.png",
+      "sha256": "c4930b618735a22be31d9e677e498305e44833ea6a74571fd83db74ce6d04704",
+      "actual_dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "mode": "RGBA"
+    },
+    {
+      "filename": "assets/source/duck-office-no-more.png",
+      "sha256": "02950e603b598b009bfb577b92338e037006990d79d05b2106fb99d4fa01e194",
+      "actual_dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "mode": "RGBA"
+    },
+    {
+      "filename": "assets/source/duck-office-fuel.png",
+      "sha256": "abae520be82f448d668e44513b25b33e297038ad27316e24a150ba4e69bb6799",
+      "actual_dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "mode": "RGBA"
+    },
+    {
+      "filename": "assets/source/duck-office-off.png",
+      "sha256": "584e5da81443620ea1ab481c36edcdfa8ea3f4f8cd97176c99de97869016f1ee",
+      "actual_dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "mode": "RGBA"
+    }
+  ]
+}

@@ -1,6 +1,17 @@
 # 图片来源说明
 
-## 当前批次：原创打工猫 24 张
+## 新增批次：参考图衍生黑帽鸭鸭 12 张
+
+- 制作日期：2026-10-14。
+- 参考来源：用户提供的一张白色鸭子、黑色贝雷帽、大圆眼睛、黄色鸭嘴的表情图片。原作者及授权状态未核实，不宣称该角色为本项目原创或已获原作者商业授权。
+- 用户请求基于此图制作职场表情并加入当前图库。参考原件、微信目录、账号标识等私人路径不进入公开仓库或 Pages。
+- 工具：Custom ImageGen 包装器委托官方 ImageGen CLI，以 `edit` 模式逐张参考同一张图片；请求模型 `gpt-image-2`，并发数为 1。
+- 提示词与逐图场景：`content/duck-office-01-prompts.json`；批次清单：`content/duck-office-01.json`；实际文件哈希与尺寸：`content/duck-office-01-generation.json`。
+- 新图移除饮料品牌文字，保留鸭鸭外观，并换成职场动作和道具。模型输出静态 PNG，本地脚本添加字幕与循环动效，生成 320×320 多帧 GIF。
+- 原画、动图与封面分别为 `assets/source/duck-office-*.png`、`assets/gifs/duck-office-*.gif`、`assets/posters/duck-office-*.webp`。
+- 本记录不构成版权许可。再分发或商业使用前，应核实参考角色与衍生图的相关权利；如需移除，可按对应 ID 删除清单与素材后重新打包。
+
+## 保留批次：原创打工猫 24 张
 
 - 生成日期：2026-10-14。
 - 工具：ImageGen Skill 的官方 `image_gen.py` CLI。

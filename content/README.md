@@ -1,4 +1,6 @@
-# ImageGen 原创替换批次
+# ImageGen 批次记录
+
+## 打工猫：24 张原创替换批次
 
 `ai-batch-01.json` 是 24 条正式表情清单；`ai-batch-01-prompts.json` 保存公共风格提示和逐图场景；`ai-batch-01-generation.json` 记录实际原画文件的尺寸与 SHA256。
 
@@ -7,6 +9,14 @@
 原画不是 GIF。`scripts/replace_ai_batch.py` 复用动画生成器，加入中文字幕及循环动效，生成 GIF 与 WebP 静态封面。字体、抖动、弹跳等是本地后期处理，不宣称这些动画帧由图像模型直接绘制。
 
 本批未使用 OpenMoji 或私人聊天图片作为参考输入。所有原画也保存在本机 `Pictures/AI` 下的唯一批次目录；密钥不在任何批次文件或仓库内容中。
+
+## 黑帽鸭鸭：12 张参考图衍生追加批次
+
+`duck-office-01.json` 是新表情清单，`duck-office-01-prompts.json` 保存统一外观约束与 12 个职场场景。每次 `edit` 请求均输入用户提供的同一张鸭鸭参考图，串行执行，保留黑帽、大眼睛、白身体与黄鸭嘴；参考图原件和私人路径不发布。
+
+模型请求为 `gpt-image-2`、`high`、`1024x1024`，实际输出尺寸、模式和 SHA256 见 `duck-office-01-generation.json`。原画不冒充动图：GIF 的字幕及动画仍由本地脚本制作。原始 PNG 保持不变；含透明通道的原画在制作 GIF 时先合成白底。
+
+在图库搜索「鸭鸭」或「职场高效」可以找到全部 12 张。本批追加而不替换猫猫，新增流程使用 `scripts/append_ai_batch.py`。有关参考图权利限制见根目录 `ATTRIBUTION.md`。
 
 ## 下一批的替换方式
 

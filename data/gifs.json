@@ -334,5 +334,173 @@
     "file": "assets/gifs/ai-cat-friday.gif",
     "poster": "assets/posters/ai-cat-friday.webp",
     "motion": "跳舞 + 彩带"
+  },
+  {
+    "id": "duck-office-received",
+    "title": "收到，马上办",
+    "category": "社交必备",
+    "tags": [
+      "鸭鸭",
+      "职场高效",
+      "收到",
+      "确认"
+    ],
+    "file": "assets/gifs/duck-office-received.gif",
+    "poster": "assets/posters/duck-office-received.webp",
+    "motion": "点头 + 对勾闪光"
+  },
+  {
+    "id": "duck-office-arrange",
+    "title": "马上安排",
+    "category": "打工日常",
+    "tags": [
+      "鸭鸭",
+      "职场高效",
+      "安排",
+      "执行"
+    ],
+    "file": "assets/gifs/duck-office-arrange.gif",
+    "poster": "assets/posters/duck-office-arrange.webp",
+    "motion": "弹跳 + 星星"
+  },
+  {
+    "id": "duck-office-working",
+    "title": "在做了在做了",
+    "category": "打工日常",
+    "tags": [
+      "鸭鸭",
+      "职场高效",
+      "进度",
+      "忙碌"
+    ],
+    "file": "assets/gifs/duck-office-working.gif",
+    "poster": "assets/posters/duck-office-working.webp",
+    "motion": "高速震动 + 键盘线"
+  },
+  {
+    "id": "duck-office-align",
+    "title": "先对齐一下",
+    "category": "打工日常",
+    "tags": [
+      "鸭鸭",
+      "职场高效",
+      "对齐",
+      "需求"
+    ],
+    "file": "assets/gifs/duck-office-align.gif",
+    "poster": "assets/posters/duck-office-align.webp",
+    "motion": "左右探头 + 气泡"
+  },
+  {
+    "id": "duck-office-priority",
+    "title": "这个优先",
+    "category": "打工日常",
+    "tags": [
+      "鸭鸭",
+      "职场高效",
+      "优先级",
+      "紧急"
+    ],
+    "file": "assets/gifs/duck-office-priority.gif",
+    "poster": "assets/posters/duck-office-priority.webp",
+    "motion": "弹跳 + 警报线"
+  },
+  {
+    "id": "duck-office-chase",
+    "title": "进度如何啦",
+    "category": "打工日常",
+    "tags": [
+      "鸭鸭",
+      "职场高效",
+      "催进度",
+      "跟进"
+    ],
+    "file": "assets/gifs/duck-office-chase.gif",
+    "poster": "assets/posters/duck-office-chase.webp",
+    "motion": "慢慢靠近 + 问号"
+  },
+  {
+    "id": "duck-office-confirm",
+    "title": "等你拍板",
+    "category": "打工日常",
+    "tags": [
+      "鸭鸭",
+      "职场高效",
+      "确认",
+      "审批"
+    ],
+    "file": "assets/gifs/duck-office-confirm.gif",
+    "poster": "assets/posters/duck-office-confirm.webp",
+    "motion": "左右摇晃 + 气泡"
+  },
+  {
+    "id": "duck-office-delivered",
+    "title": "已交付，请查收",
+    "category": "打工日常",
+    "tags": [
+      "鸭鸭",
+      "职场高效",
+      "交付",
+      "完成"
+    ],
+    "file": "assets/gifs/duck-office-delivered.gif",
+    "poster": "assets/posters/duck-office-delivered.webp",
+    "motion": "弹跳 + 对勾闪光"
+  },
+  {
+    "id": "duck-office-fast",
+    "title": "效率拉满",
+    "category": "快乐吃瓜",
+    "tags": [
+      "鸭鸭",
+      "职场高效",
+      "效率",
+      "起飞"
+    ],
+    "file": "assets/gifs/duck-office-fast.gif",
+    "poster": "assets/posters/duck-office-fast.webp",
+    "motion": "向右跑开 + 速度线"
+  },
+  {
+    "id": "duck-office-no-more",
+    "title": "别再加需求了",
+    "category": "情绪发疯",
+    "tags": [
+      "鸭鸭",
+      "职场高效",
+      "需求",
+      "变更"
+    ],
+    "file": "assets/gifs/duck-office-no-more.gif",
+    "poster": "assets/posters/duck-office-no-more.webp",
+    "motion": "摇头 + 汗滴"
+  },
+  {
+    "id": "duck-office-fuel",
+    "title": "喝口再卷",
+    "category": "打工日常",
+    "tags": [
+      "鸭鸭",
+      "职场高效",
+      "续命",
+      "饮料"
+    ],
+    "file": "assets/gifs/duck-office-fuel.gif",
+    "poster": "assets/posters/duck-office-fuel.webp",
+    "motion": "点头 + 星星"
+  },
+  {
+    "id": "duck-office-off",
+    "title": "高效下班",
+    "category": "快乐吃瓜",
+    "tags": [
+      "鸭鸭",
+      "职场高效",
+      "下班",
+      "收工"
+    ],
+    "file": "assets/gifs/duck-office-off.gif",
+    "poster": "assets/posters/duck-office-off.webp",
+    "motion": "向右跑开 + 残影"
   }
 ]
