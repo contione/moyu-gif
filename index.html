@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#d4f85a">
+    <meta name="description" content="摸鱼补给站：会动的打工人快乐。搜索、收藏、复制链接、下载搞笑 GIF，用表情替你说话。">
+    <title>摸鱼补给站 — 今天的班，笑着摸。</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#gallery">跳到表情图库</a>
+    <header class="site-header wrap">
+      <a class="brand" href="./" aria-label="摸鱼补给站首页"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M9 12v3m14-3v3M9 20q7 8 14 0"/></svg></span>摸鱼补给站<span class="brand-en">MOYU CLUB</span></a>
+      <nav aria-label="站点导航"><button class="text-button" id="help-button">怎么发到 Chat？</button><a class="github-link" href="https://github.com/contione/moyu-gif" target="_blank" rel="noopener noreferrer">GitHub <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></nav>
+    </header>
+    <main class="wrap">
+      <section class="intro" aria-labelledby="page-title">
+        <div><h1 id="page-title">今天的班，<span>笑着摸。</span></h1><p>把无语变成表情，把快乐发进群聊。<br class="mobile-break">工作可以严肃，表情不必。</p></div>
+        <div class="intro-actions"><a class="button outline" href="assets/moyu-gifs.zip" download>整包带走 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/></svg></a><button class="button dark" id="random-button">随机来一张 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 3 4 4-4 4m0 2 4 4-4 4M4 7h3c5 0 5 10 10 10h3M4 17h3c2 0 3-2 4-4m2-2c1-2 2-4 4-4h3"/></svg></button></div>
+      </section>
+      <section class="toolbar" aria-label="筛选表情">
+        <div class="search-row"><label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><span class="sr-only">搜索表情、心情、关键词</span><input id="search" type="search" placeholder="搜表情、心情、关键词…" autocomplete="off"><kbd>/</kbd></label><button id="motion-button" class="motion-button" role="switch" aria-checked="true"><span class="switch-track"><span></span></span><span id="motion-label">动起来</span></button></div>
+        <div class="filter-row"><div id="categories" class="categories" role="group" aria-label="表情分类"></div><span class="result-count" id="result-count" role="status" aria-live="polite">补给加载中…</span></div>
+      </section>
+      <section id="gallery" class="gallery" aria-label="GIF 表情图库" tabindex="-1"></section>
+      <div class="empty-state" id="empty-state" hidden><span class="empty-face" aria-hidden="true">: )</span><h2 id="empty-title">暂时没有这款心情</h2><p id="empty-message">换个关键词试试，比如「下班」「吃瓜」「崩溃」。</p><button class="button dark" id="reset-button">看看全部表情</button></div>
+      <aside class="usage-note"><span class="note-icon" aria-hidden="true">i</span><p><strong>快乐传递小贴士</strong><span>复制的是 GIF 链接。想稳稳地发送动图？下载后作为图片文件上传到 Google Chat。</span></p><button id="note-help" class="text-button">查看用法 <span aria-hidden="true">↗</span></button></aside>
+    </main>
+    <footer class="site-footer wrap"><p>摸鱼有度，快乐无限。<span>Made for the group chat.</span></p><div><a href="https://github.com/contione/moyu-gif/blob/main/README.md" target="_blank" rel="noopener noreferrer">添加你的表情</a><a href="https://github.com/contione/moyu-gif/blob/main/ATTRIBUTION.md" target="_blank" rel="noopener noreferrer">OpenMoji · CC BY-SA 4.0</a></div></footer>
+    <dialog id="preview-dialog" class="preview-dialog" aria-labelledby="preview-title"><button class="close-button" id="close-preview" aria-label="关闭预览">×</button><div class="preview-art"><img id="preview-image" alt="" width="400" height="400"></div><div class="preview-content"><div class="preview-heading"><div><p id="preview-category" class="eyebrow"></p><h2 id="preview-title"></h2></div><button id="preview-favorite" class="favorite-button" aria-label="收藏表情"></button></div><p id="preview-tags" class="preview-tags"></p><div class="preview-actions"><button id="preview-copy" class="button dark">复制 GIF 链接</button><a id="preview-download" class="button outline" download>下载 GIF</a></div><div class="preview-pagination"><button id="previous-button" aria-label="上一张表情">← 上一张</button><span id="preview-position"></span><button id="next-button" aria-label="下一张表情">下一张 →</button></div></div></dialog>
+    <dialog id="help-dialog" class="help-dialog" aria-labelledby="help-title"><button class="close-button" id="close-help" aria-label="关闭使用说明">×</button><h2 id="help-title">把快乐发进 Google Chat</h2><ol><li><strong>最快：复制链接</strong><p>点击「复制链接」，回到聊天框粘贴并发送。这复制的是链接，不是图片文件；是否显示动图预览由 Chat 决定。</p></li><li><strong>更稳妥：下载再上传</strong><p>点击「下载」，将 .gif 文件作为图片附件上传到 Chat。不要截图，截图只会保留一帧。</p></li><li><strong>收藏：留住你的常用梗</strong><p>点爱心加入「我的收藏」。收藏只存在当前浏览器，不会同步到其他设备。</p></li></ol><div class="help-tip">这里提供的是聊天 GIF，不会自动添加到 Google Chat 的自定义表情列表。文件大小、权限和组织设置请以你实际使用的 Chat 为准。</div><a class="button dark" href="https://github.com/contione/moyu-gif/blob/main/README.md" target="_blank" rel="noopener noreferrer">我想维护这个图库 ↗</a></dialog>
+    <dialog id="copy-dialog" class="help-dialog" aria-labelledby="copy-title"><button class="close-button" id="close-copy" aria-label="关闭复制链接">×</button><h2 id="copy-title">手动复制这个链接</h2><p>浏览器没有允许剪贴板访问，请选中下面的链接复制。</p><label class="sr-only" for="copy-fallback">GIF 链接</label><input id="copy-fallback" type="text" readonly></dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

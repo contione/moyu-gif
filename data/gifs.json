@@ -1,0 +1,218 @@
+[
+  {
+    "id": "cream-cat-lazy-laptop",
+    "title": "摸鱼中",
+    "category": "打工日常",
+    "tags": ["cat", "猫", "cream cat", "laptop", "lazy", "摸鱼", "摸鱼中"],
+    "file": "assets/gifs/cream-cat-lazy-laptop.gif",
+    "poster": "assets/posters/cream-cat-lazy-laptop.webp",
+    "motion": "摇头 + 屏幕闪动"
+  },
+  {
+    "id": "green-frog-shocked",
+    "title": "你说啥",
+    "category": "情绪发疯",
+    "tags": ["frog", "青蛙", "green frog", "shocked", "surprise", "震惊", "你说啥"],
+    "file": "assets/gifs/green-frog-shocked.gif",
+    "poster": "assets/posters/green-frog-shocked.webp",
+    "motion": "震动 + 惊叹号"
+  },
+  {
+    "id": "hamster-salute",
+    "title": "收到收到",
+    "category": "社交必备",
+    "tags": ["hamster", "仓鼠", "salute", "acknowledged", "收到", "收到收到"],
+    "file": "assets/gifs/hamster-salute.gif",
+    "poster": "assets/posters/hamster-salute.webp",
+    "motion": "弹跳 + 星星"
+  },
+  {
+    "id": "beaver-running",
+    "title": "下班跑路",
+    "category": "打工日常",
+    "tags": ["beaver", "海狸", "running", "off work", "下班", "跑路"],
+    "file": "assets/gifs/beaver-running.gif",
+    "poster": "assets/posters/beaver-running.webp",
+    "motion": "向右跑开 + 残影"
+  },
+  {
+    "id": "white-ghost-exhausted",
+    "title": "我先碎了",
+    "category": "情绪发疯",
+    "tags": ["ghost", "幽灵", "white ghost", "exhausted", "collapse", "崩溃", "碎了"],
+    "file": "assets/gifs/white-ghost-exhausted.gif",
+    "poster": "assets/posters/white-ghost-exhausted.webp",
+    "motion": "漂浮 + 汗滴"
+  },
+  {
+    "id": "panda-angry-exploding",
+    "title": "问题不大",
+    "category": "情绪发疯",
+    "tags": ["panda", "熊猫", "angry", "exploding", "崩溃", "嘴硬", "问题不大"],
+    "file": "assets/gifs/panda-angry-exploding.gif",
+    "poster": "assets/posters/panda-angry-exploding.webp",
+    "motion": "剧烈震动 + 爆炸线"
+  },
+  {
+    "id": "duck-popcorn",
+    "title": "吃瓜前排",
+    "category": "快乐吃瓜",
+    "tags": ["duck", "鸭", "popcorn", "gossip", "吃瓜", "前排"],
+    "file": "assets/gifs/duck-popcorn.gif",
+    "poster": "assets/posters/duck-popcorn.webp",
+    "motion": "弹跳 + 爆米花飞溅"
+  },
+  {
+    "id": "dog-thumbs-up",
+    "title": "你是懂的",
+    "category": "社交必备",
+    "tags": ["dog", "狗", "thumbs up", "approval", "点赞", "懂了"],
+    "file": "assets/gifs/dog-thumbs-up.gif",
+    "poster": "assets/posters/dog-thumbs-up.webp",
+    "motion": "点头 + 对勾闪光"
+  },
+  {
+    "id": "cat-hiding-behind-plant",
+    "title": "老板来了",
+    "category": "打工日常",
+    "tags": ["cat", "猫", "plant", "hiding", "躲藏", "老板来了"],
+    "file": "assets/gifs/cat-hiding-behind-plant.gif",
+    "poster": "assets/posters/cat-hiding-behind-plant.webp",
+    "motion": "左右探头 + 警报线"
+  },
+  {
+    "id": "frog-crying-at-bills",
+    "title": "钱呢钱呢",
+    "category": "打工日常",
+    "tags": ["frog", "青蛙", "crying", "bills", "没钱", "崩溃", "钱呢"],
+    "file": "assets/gifs/frog-crying-at-bills.gif",
+    "poster": "assets/posters/frog-crying-at-bills.webp",
+    "motion": "下坠 + 账单飘落"
+  },
+  {
+    "id": "hamster-typing-fast",
+    "title": "在改了在改了",
+    "category": "打工日常",
+    "tags": ["hamster", "仓鼠", "typing", "fast", "赶工", "加班", "在改了"],
+    "file": "assets/gifs/hamster-typing-fast.gif",
+    "poster": "assets/posters/hamster-typing-fast.webp",
+    "motion": "高速震动 + 键盘线"
+  },
+  {
+    "id": "beaver-cool-sunglasses",
+    "title": "情绪稳定",
+    "category": "情绪发疯",
+    "tags": ["beaver", "海狸", "sunglasses", "cool", "情绪稳定", "稳定"],
+    "file": "assets/gifs/beaver-cool-sunglasses.gif",
+    "poster": "assets/posters/beaver-cool-sunglasses.webp",
+    "motion": "小幅旋转 + 墨镜反光"
+  },
+  {
+    "id": "panda-brain-smoking",
+    "title": "CPU烧了",
+    "category": "情绪发疯",
+    "tags": ["panda", "熊猫", "brain", "smoking", "CPU", "烧脑", "崩溃"],
+    "file": "assets/gifs/panda-brain-smoking.gif",
+    "poster": "assets/posters/panda-brain-smoking.webp",
+    "motion": "左右摇晃 + 烟雾"
+  },
+  {
+    "id": "duck-facepalm",
+    "title": "这合理吗",
+    "category": "快乐吃瓜",
+    "tags": ["duck", "鸭", "facepalm", "question", "无语", "合理吗"],
+    "file": "assets/gifs/duck-facepalm.gif",
+    "poster": "assets/posters/duck-facepalm.webp",
+    "motion": "捂脸摇头 + 问号"
+  },
+  {
+    "id": "cat-eyes-sparkle",
+    "title": "好耶",
+    "category": "快乐吃瓜",
+    "tags": ["cat", "猫", "sparkle eyes", "happy", "开心", "好耶"],
+    "file": "assets/gifs/cat-eyes-sparkle.gif",
+    "poster": "assets/posters/cat-eyes-sparkle.webp",
+    "motion": "心形飘起 + 闪光"
+  },
+  {
+    "id": "frog-slow-clap",
+    "title": "妙啊",
+    "category": "快乐吃瓜",
+    "tags": ["frog", "青蛙", "slow clap", "bravo", "妙啊", "鼓掌"],
+    "file": "assets/gifs/frog-slow-clap.gif",
+    "poster": "assets/posters/frog-slow-clap.webp",
+    "motion": "慢速鼓掌 + 亮点"
+  },
+  {
+    "id": "ghost-melting-flat",
+    "title": "人已下线",
+    "category": "打工日常",
+    "tags": ["ghost", "幽灵", "melting", "offline", "下线", "崩溃", "融化"],
+    "file": "assets/gifs/ghost-melting-flat.gif",
+    "poster": "assets/posters/ghost-melting-flat.webp",
+    "motion": "融化下沉 + 汗滴"
+  },
+  {
+    "id": "dog-running-circles",
+    "title": "急急急",
+    "category": "情绪发疯",
+    "tags": ["dog", "狗", "running circles", "urgent", "着急", "急急急"],
+    "file": "assets/gifs/dog-running-circles.gif",
+    "poster": "assets/posters/dog-running-circles.webp",
+    "motion": "原地打转 + 速度线"
+  },
+  {
+    "id": "hamster-coffee-trembling",
+    "title": "咖啡续命",
+    "category": "打工日常",
+    "tags": ["hamster", "仓鼠", "coffee", "trembling", "咖啡", "续命", "颤抖"],
+    "file": "assets/gifs/hamster-coffee-trembling.gif",
+    "poster": "assets/posters/hamster-coffee-trembling.webp",
+    "motion": "颤抖 + 咖啡蒸汽"
+  },
+  {
+    "id": "beaver-folded-arms",
+    "title": "不想努力了",
+    "category": "打工日常",
+    "tags": ["beaver", "海狸", "folded arms", "lazy", "摆烂", "不想努力了"],
+    "file": "assets/gifs/beaver-folded-arms.gif",
+    "poster": "assets/posters/beaver-folded-arms.webp",
+    "motion": "横向慢移 + 叹气"
+  },
+  {
+    "id": "duck-whisper",
+    "title": "八卦一下",
+    "category": "快乐吃瓜",
+    "tags": ["duck", "鸭", "whisper", "gossip", "八卦", "悄悄话"],
+    "file": "assets/gifs/duck-whisper.gif",
+    "poster": "assets/posters/duck-whisper.webp",
+    "motion": "悄悄靠近 + 对话气泡"
+  },
+  {
+    "id": "cat-pleading-paws",
+    "title": "求放过",
+    "category": "社交必备",
+    "tags": ["cat", "猫", "pleading", "paws", "求饶", "求放过"],
+    "file": "assets/gifs/cat-pleading-paws.gif",
+    "poster": "assets/posters/cat-pleading-paws.webp",
+    "motion": "祈求弹跳 + 心形"
+  },
+  {
+    "id": "panda-bowing",
+    "title": "谢谢老板",
+    "category": "社交必备",
+    "tags": ["panda", "熊猫", "bowing", "thanks", "感谢", "谢谢老板"],
+    "file": "assets/gifs/panda-bowing.gif",
+    "poster": "assets/posters/panda-bowing.webp",
+    "motion": "鞠躬 + 星星"
+  },
+  {
+    "id": "frog-dancing",
+    "title": "周五快乐",
+    "category": "快乐吃瓜",
+    "tags": ["frog", "青蛙", "dancing", "friday", "快乐", "周五", "周五快乐"],
+    "file": "assets/gifs/frog-dancing.gif",
+    "poster": "assets/posters/frog-dancing.webp",
+    "motion": "跳舞 + 彩带"
+  }
+]
