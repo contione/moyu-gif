@@ -12,6 +12,8 @@ from typing import Any
 
 from PIL import Image, ImageDraw, ImageFont
 
+from caption_effects import draw_animated_caption, has_caption_effect
+
 
 SHEET_COLUMNS = 6
 SHEET_ROWS = 4
@@ -390,6 +392,8 @@ def build_frame(
 
     frame = Image.new("RGB", (OUTPUT_WIDTH, OUTPUT_HEIGHT), WHITE)
     frame.paste(top_area.convert("RGB"), (0, 0))
+    if draw_animated_caption(frame, title, caption_font, frame_index, frame_count, CHARACTER_AREA_HEIGHT):
+        return frame
     draw = ImageDraw.Draw(frame)
     draw.text(
         (OUTPUT_WIDTH // 2, CHARACTER_AREA_HEIGHT + CAPTION_AREA_HEIGHT // 2),
@@ -455,7 +459,8 @@ def save_outputs(
             optimize=False,
             colors=256,
         )
-        frames[0].save(original_poster, format="WEBP", quality=88, method=6)
+        poster_frame = frames[frame_count // 2] if has_caption_effect(record["title"]) else frames[0]
+        poster_frame.save(original_poster, format="WEBP", quality=88, method=6)
         file_size = original_gif.stat().st_size
         if file_size >= MAX_FILE_SIZE_BYTES:
             raise RuntimeError(f"Generated GIF exceeds 2 MB: {original_gif} ({file_size} bytes)")

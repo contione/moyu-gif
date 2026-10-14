@@ -18,6 +18,8 @@
 
 在图库搜索「鸭鸭」或「职场高效」可以找到全部 12 张。本批追加而不替换猫猫，新增流程使用 `scripts/append_ai_batch.py`。有关参考图权利限制见根目录 `ATTRIBUTION.md`。
 
+2026-10-15 增加漫画关键词字幕：彩色重点词、描边阴影与按语气设计的局部动效，后半圈保留阅读停顿。`scripts/caption_effects.py` 配置字体表现；`scripts/restyle_gifs.py --manifest content/duck-office-01.json` 重绘已存在的鸭鸭 GIF/封面并重建 ZIP，保留猫猫、清单与全部源 PNG，不重新请求 ImageGen。
+
 ## 下一批的替换方式
 
 为下一批准备 24 条清单，使用新的 ID 和对应的 `{id}.png`。先预检，再替换：

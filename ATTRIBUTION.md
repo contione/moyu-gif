@@ -8,6 +8,7 @@
 - 工具：Custom ImageGen 包装器委托官方 ImageGen CLI，以 `edit` 模式逐张参考同一张图片；请求模型 `gpt-image-2`，并发数为 1。
 - 提示词与逐图场景：`content/duck-office-01-prompts.json`；批次清单：`content/duck-office-01.json`；实际文件哈希与尺寸：`content/duck-office-01-generation.json`。
 - 新图移除饮料品牌文字，保留鸭鸭外观，并换成职场动作和道具。模型输出静态 PNG，本地脚本添加字幕与循环动效，生成 320×320 多帧 GIF。
+- 2026-10-15 字幕优化：通过本地 `caption_effects.py` 添加关键词漫画描边、弹跳、盖章、挤压及阅读停顿；没有再次调用生图模型或修改原始 PNG。静态封面选用字幕停稳的画面。
 - 原画、动图与封面分别为 `assets/source/duck-office-*.png`、`assets/gifs/duck-office-*.gif`、`assets/posters/duck-office-*.webp`。
 - 本记录不构成版权许可。再分发或商业使用前，应核实参考角色与衍生图的相关权利；如需移除，可按对应 ID 删除清单与素材后重新打包。
 

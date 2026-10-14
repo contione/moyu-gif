@@ -12,6 +12,15 @@
   },
   "reference": "The same user-provided duck image was submitted with each edit request. The original reference file, local path and account identifiers are not published. Rights to the reference character are not independently verified.",
   "postprocessing": "ImageGen produced static PNG illustrations. Local scripts composite transparency onto white, add Chinese captions, and create looping animated GIFs plus static WebP posters. Original PNG bytes are preserved.",
+  "caption_animation": {
+    "updated_local_date": "2026-10-15",
+    "renderer": "scripts/caption_effects.py",
+    "style": "comic-keywords-v1",
+    "loop_ms": 1600,
+    "reading_hold_ms": 800,
+    "source_pngs_regenerated": false,
+    "poster": "Stable caption frame from the middle of the loop"
+  },
   "assets": [
     {
       "filename": "assets/source/duck-office-received.png",

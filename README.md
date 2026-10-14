@@ -70,7 +70,20 @@ rtk python scripts/package_site.py
 
 原始 PNG 保存在 `assets/source/`；猫猫提示词和清单见 `content/ai-batch-01-prompts.json`、`content/ai-batch-01.json`；鸭鸭对应 `content/duck-office-01-prompts.json`、`content/duck-office-01.json`。两个批次的 `*-generation.json` 记录实际尺寸及 SHA256。
 
-**原画本身是静态 PNG，不是模型直接生成的视频。** 本地脚本为每张原画添加摇头、弹跳、震动、位移、烟雾等循环动效，以及固定中文字幕，输出真正包含不同帧的 320×320 GIF；同时导出 WebP 静态封面。网站播放和下载使用 GIF，关闭动效后才使用封面。当前批次没有使用旧 OpenMoji 图片作为输入。
+**原画本身是静态 PNG，不是模型直接生成的视频。** 本地脚本为每张原画添加摇头、弹跳、震动、位移、烟雾等循环动效和中文字幕，输出真正包含不同帧的 320×320 GIF；同时导出 WebP 静态封面。网站播放和下载使用 GIF，关闭动效后才使用封面。当前批次没有使用旧 OpenMoji 图片作为输入。
+
+### 鸭鸭漫画字幕
+
+12 张鸭鸭的关键词使用彩色填充、深色描边、白色外描边和轻阴影，按语气分别加入盖章回弹、挤压、探头、加速和等待圆点。每个 1.6 秒循环的后半段，字幕保持约 0.8 秒不动以便阅读；角色仍可继续运动。不使用整句彩虹闪烁，也不隐藏整句文字。关闭动效时显示字幕停稳后的完整封面。
+
+样式由 `scripts/caption_effects.py` 中的 `CAPTION_STYLES` 按标题配置；未配置的标题继续使用普通黑色字幕。更新样式后，用以下命令仅重绘已有鸭鸭，不重新生图、不修改清单或原始 PNG：
+
+```powershell
+rtk python scripts/restyle_gifs.py --manifest content/duck-office-01.json --check-only
+rtk python scripts/restyle_gifs.py --manifest content/duck-office-01.json
+```
+
+脚本保存旧 GIF、封面和 ZIP 的备份，在隔离目录重绘并验证全量站点，通过后才替换选中的鸭鸭素材。24 张猫猫不变，ZIP 仍包含全部 36 张。
 
 ## 整批替换下一批原创表情
 
