@@ -141,7 +141,7 @@ function makeCard(item) {
   download.innerHTML = ICONS.download;
   download.append(document.createTextNode("下载"));
   download.href = item.file;
-  download.download = `${item.title}.gif`;
+  download.download = `${item.id}.gif`;
   download.setAttribute("aria-label", `下载 GIF：${item.title}`);
   actions.append(copy, download);
   content.append(heading, actions);
@@ -176,7 +176,7 @@ function openPreview(item) {
   byId("preview-category").textContent = item.category;
   byId("preview-tags").textContent = item.tags.map((tag) => `#${tag}`).join("  ");
   byId("preview-download").href = item.file;
-  byId("preview-download").download = `${item.title}.gif`;
+  byId("preview-download").download = `${item.id}.gif`;
   setFavoriteButton(byId("preview-favorite"), item);
   byId("preview-dialog").style.setProperty("--card-bg", COLORS[items.indexOf(item) % COLORS.length]);
   const collection = previewCollection();
