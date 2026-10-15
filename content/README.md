@@ -20,6 +20,8 @@
 
 2026-10-15 增加漫画关键词字幕：彩色重点词、描边阴影与按语气设计的局部动效，后半圈保留阅读停顿。`scripts/caption_effects.py` 配置字体表现；`scripts/restyle_gifs.py --manifest content/duck-office-01.json` 重绘已存在的鸭鸭 GIF/封面并重建 ZIP，保留猫猫、清单与全部源 PNG，不重新请求 ImageGen。
 
+同日新增 `scripts/build_emoji_assets.py`：从完整鸭鸭 GIF 的角色区域生成 128×128 Emoji 专用 GIF，移除字幕与多余留白，控制每张小于 256 KB。网页「下载 Emoji」按钮指向 `assets/emojis/`；完整带字幕 GIF 仍用于网页播放。
+
 ## 下一批的替换方式
 
 为下一批准备 24 条清单，使用新的 ID 和对应的 `{id}.png`。先预检，再替换：

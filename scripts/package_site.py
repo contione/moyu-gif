@@ -68,6 +68,12 @@ def main():
         destination = target / source.relative_to(ROOT)
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
+    emoji_directory = ROOT / "assets" / "emojis"
+    if emoji_directory.is_dir():
+        for source in sorted(emoji_directory.glob("*.gif")):
+            destination = target / source.relative_to(ROOT)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, destination)
     print(f"Validated {len(records)} animated GIFs, created ZIP and static site: {target}")
 
 

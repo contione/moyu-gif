@@ -9,6 +9,7 @@
 - 提示词与逐图场景：`content/duck-office-01-prompts.json`；批次清单：`content/duck-office-01.json`；实际文件哈希与尺寸：`content/duck-office-01-generation.json`。
 - 新图移除饮料品牌文字，保留鸭鸭外观，并换成职场动作和道具。模型输出静态 PNG，本地脚本添加字幕与循环动效，生成 320×320 多帧 GIF。
 - 2026-10-15 字幕优化：通过本地 `caption_effects.py` 添加关键词漫画描边、弹跳、盖章、挤压及阅读停顿；没有再次调用生图模型或修改原始 PNG。静态封面选用字幕停稳的画面。
+- 2026-10-15 Google Chat Emoji 版：从现有鸭鸭 GIF 的角色区域裁切并放大到 128×128，移除字幕和画布留白，重新编码为小于 256 KB 的循环 GIF，存放于 `assets/emojis/`。这不是再次生图，原始 PNG 和完整 GIF 不变。
 - 原画、动图与封面分别为 `assets/source/duck-office-*.png`、`assets/gifs/duck-office-*.gif`、`assets/posters/duck-office-*.webp`。
 - 本记录不构成版权许可。再分发或商业使用前，应核实参考角色与衍生图的相关权利；如需移除，可按对应 ID 删除清单与素材后重新打包。
 

@@ -43,6 +43,14 @@ function imageUrl(item) {
   return animated ? item.file : item.poster;
 }
 
+function emojiUrl(item) {
+  return item.id.startsWith("duck-office-") ? `assets/emojis/${item.id}.gif` : item.file;
+}
+
+function downloadLabel(item) {
+  return item.id.startsWith("duck-office-") ? "下载 Emoji" : "下载 GIF";
+}
+
 function setFavoriteButton(button, item) {
   const selected = favorites.has(item.id);
   button.innerHTML = ICONS.heart;
@@ -139,10 +147,10 @@ function makeCard(item) {
   copy.addEventListener("click", () => copyLink(item));
   const download = element("a", "button outline");
   download.innerHTML = ICONS.download;
-  download.append(document.createTextNode("下载"));
-  download.href = item.file;
+  download.append(document.createTextNode(downloadLabel(item)));
+  download.href = emojiUrl(item);
   download.download = `${item.id}.gif`;
-  download.setAttribute("aria-label", `下载 GIF：${item.title}`);
+  download.setAttribute("aria-label", `${downloadLabel(item)}：${item.title}`);
   actions.append(copy, download);
   content.append(heading, actions);
   card.append(art, content);
@@ -175,8 +183,9 @@ function openPreview(item) {
   byId("preview-title").textContent = item.title;
   byId("preview-category").textContent = item.category;
   byId("preview-tags").textContent = item.tags.map((tag) => `#${tag}`).join("  ");
-  byId("preview-download").href = item.file;
+  byId("preview-download").href = emojiUrl(item);
   byId("preview-download").download = `${item.id}.gif`;
+  byId("preview-download").textContent = downloadLabel(item);
   setFavoriteButton(byId("preview-favorite"), item);
   byId("preview-dialog").style.setProperty("--card-bg", COLORS[items.indexOf(item) % COLORS.length]);
   const collection = previewCollection();
