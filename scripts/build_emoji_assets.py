@@ -11,13 +11,14 @@ from PIL import Image, ImageChops, ImageSequence
 
 OUTPUT_SIZE = 128
 MAX_BYTES = 256 * 1024
+SUBTITLE_FRACTION = 0.23
 WHITE_THRESHOLD = 245
 
 
 def parse_args() -> argparse.Namespace:
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--manifest", type=Path, default=root / "content" / "duck-office-01.json")
+    parser.add_argument("--manifest", type=Path, default=root / "data" / "gifs.json")
     parser.add_argument("--repo-root", type=Path, default=root)
     parser.add_argument("--check-only", action="store_true")
     return parser.parse_args()
@@ -41,23 +42,37 @@ def content_box(frames: list[Image.Image]) -> tuple[int, int, int, int]:
     width = right - left
     height = bottom - top
     side = max(width, height)
-    padding = max(6, round(side * 0.06))
-    side = min(max(side + padding * 2, width, height), frames[0].width, frames[0].height)
+    padding = max(4, round(side * 0.04))
+    side += padding * 2
     center_x = (left + right) // 2
     center_y = (top + bottom) // 2
-    crop_left = max(0, min(frames[0].width - side, center_x - side // 2))
-    crop_top = max(0, min(frames[0].height - side, center_y - side // 2))
+    crop_left = center_x - side // 2
+    crop_top = center_y - side // 2
     return crop_left, crop_top, crop_left + side, crop_top + side
 
 
 def make_frame(frame: Image.Image, box: tuple[int, int, int, int]) -> Image.Image:
-    cropped = frame.convert("RGB").crop(box)
-    return cropped.resize((OUTPUT_SIZE, OUTPUT_SIZE), Image.Resampling.LANCZOS)
+    left, top, right, bottom = box
+    side = right - left
+    canvas = Image.new("RGB", (side, side), "white")
+    source = frame.convert("RGB")
+    source_box = (
+        max(0, left),
+        max(0, top),
+        min(source.width, right),
+        min(source.height, bottom),
+    )
+    canvas.paste(source.crop(source_box), (source_box[0] - left, source_box[1] - top))
+    return canvas.resize((OUTPUT_SIZE, OUTPUT_SIZE), Image.Resampling.LANCZOS)
 
 
 def convert(source: Path, destination: Path) -> None:
     with Image.open(source) as image:
-        frames = [frame.copy().convert("RGB").crop((0, 0, image.width, round(image.height * 0.77))) for frame in ImageSequence.Iterator(image)]
+        content_height = round(image.height * (1 - SUBTITLE_FRACTION))
+        frames = [
+            frame.copy().convert("RGB").crop((0, 0, image.width, content_height))
+            for frame in ImageSequence.Iterator(image)
+        ]
         durations = [frame.info.get("duration", 80) for frame in ImageSequence.Iterator(image)]
     box = content_box(frames)
     output_frames = [make_frame(frame, box).quantize(colors=128, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE) for frame in frames]

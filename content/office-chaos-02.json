@@ -1,0 +1,114 @@
+[
+  {
+    "id": "office-chaos-pretend-busy",
+    "title": "我先假装在忙",
+    "category": "打工日常",
+    "tags": [
+      "打工新梗",
+      "摸鱼",
+      "假装忙"
+    ],
+    "file": "assets/gifs/office-chaos-pretend-busy.gif",
+    "poster": "assets/posters/office-chaos-pretend-busy.webp",
+    "motion": "左右探头 + 气泡",
+    "source": "assets/source/ai-cat-typing.png"
+  },
+  {
+    "id": "office-chaos-really-needed",
+    "title": "这需求它合理吗",
+    "category": "情绪发疯",
+    "tags": [
+      "打工新梗",
+      "需求",
+      "无语"
+    ],
+    "file": "assets/gifs/office-chaos-really-needed.gif",
+    "poster": "assets/posters/office-chaos-really-needed.webp",
+    "motion": "剧烈摇头 + 问号",
+    "source": "assets/source/duck-office-no-more.png"
+  },
+  {
+    "id": "office-chaos-brain-offline",
+    "title": "已读但脑子没回",
+    "category": "社交必备",
+    "tags": [
+      "打工新梗",
+      "已读",
+      "大脑离线"
+    ],
+    "file": "assets/gifs/office-chaos-brain-offline.gif",
+    "poster": "assets/posters/office-chaos-brain-offline.webp",
+    "motion": "慢慢靠近 + 问号",
+    "source": "assets/source/ai-cat-loading.png"
+  },
+  {
+    "id": "office-chaos-broke-again",
+    "title": "钱没了班还在",
+    "category": "打工日常",
+    "tags": [
+      "打工新梗",
+      "工资",
+      "没钱"
+    ],
+    "file": "assets/gifs/office-chaos-broke-again.gif",
+    "poster": "assets/posters/office-chaos-broke-again.webp",
+    "motion": "左右摇晃 + 气泡",
+    "source": "assets/source/ai-cat-wallet.png"
+  },
+  {
+    "id": "office-chaos-monday-soul",
+    "title": "周一精神出走",
+    "category": "情绪发疯",
+    "tags": [
+      "打工新梗",
+      "周一",
+      "灵魂出窍"
+    ],
+    "file": "assets/gifs/office-chaos-monday-soul.gif",
+    "poster": "assets/posters/office-chaos-monday-soul.webp",
+    "motion": "漂浮 + 星星",
+    "source": "assets/source/ai-cat-shattered.png"
+  },
+  {
+    "id": "office-chaos-snack-first",
+    "title": "不干了先吃瓜",
+    "category": "快乐吃瓜",
+    "tags": [
+      "打工新梗",
+      "吃瓜",
+      "摆烂"
+    ],
+    "file": "assets/gifs/office-chaos-snack-first.gif",
+    "poster": "assets/posters/office-chaos-snack-first.webp",
+    "motion": "跳舞 + 彩带",
+    "source": "assets/source/ai-cat-popcorn.png"
+  },
+  {
+    "id": "office-chaos-half-received",
+    "title": "收到但没完全收到",
+    "category": "社交必备",
+    "tags": [
+      "打工新梗",
+      "收到",
+      "迷惑"
+    ],
+    "file": "assets/gifs/office-chaos-half-received.gif",
+    "poster": "assets/posters/office-chaos-half-received.webp",
+    "motion": "剧烈摇头 + 问号",
+    "source": "assets/source/duck-office-received.png"
+  },
+  {
+    "id": "office-chaos-clock-out",
+    "title": "下班速度拉满",
+    "category": "快乐吃瓜",
+    "tags": [
+      "打工新梗",
+      "下班",
+      "开溜"
+    ],
+    "file": "assets/gifs/office-chaos-clock-out.gif",
+    "poster": "assets/posters/office-chaos-clock-out.webp",
+    "motion": "弹跳 + 速度线",
+    "source": "assets/source/duck-office-off.png"
+  }
+]

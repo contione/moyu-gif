@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import re
 import shutil
 from datetime import datetime
 from pathlib import Path, PurePosixPath
@@ -30,6 +31,7 @@ WHITE_THRESHOLD = 24
 DEFAULT_FONT = Path(r"C:\Windows\Fonts\msyhbd.ttc")
 ALLOWED_CATEGORIES = {"打工日常", "情绪发疯", "快乐吃瓜", "社交必备"}
 REQUIRED_FIELDS = {"id", "title", "category", "tags", "file", "poster", "motion"}
+OPTIONAL_FIELDS = {"chat", "emoji", "source"}
 
 
 def parse_args() -> argparse.Namespace:
@@ -80,8 +82,10 @@ def read_manifest(manifest_path: Path) -> list[dict[str, Any]]:
     seen_files: set[str] = set()
     seen_posters: set[str] = set()
     for index, record in enumerate(records, start=1):
-        if not isinstance(record, dict) or set(record) != REQUIRED_FIELDS:
-            raise RuntimeError(f"Manifest record {index} must contain exactly: {sorted(REQUIRED_FIELDS)}")
+        if not isinstance(record, dict) or not REQUIRED_FIELDS.issubset(record) or set(record) - REQUIRED_FIELDS - OPTIONAL_FIELDS:
+            raise RuntimeError(
+                f"Manifest record {index} must contain {sorted(REQUIRED_FIELDS)} and only optional fields {sorted(OPTIONAL_FIELDS)}"
+            )
         record_id = record["id"]
         if not isinstance(record_id, str) or not record_id or record_id in seen_ids:
             raise RuntimeError(f"Manifest record {index} has an invalid or duplicate id")
@@ -111,6 +115,15 @@ def read_manifest(manifest_path: Path) -> list[dict[str, Any]]:
             if normalized_path in seen_paths:
                 raise RuntimeError(f"Manifest contains duplicate {field_name} paths")
             seen_paths.add(normalized_path)
+        if "chat" in record and record["chat"] != f"assets/chat/{record_id}.gif":
+            raise RuntimeError(f"Manifest record {index} has an invalid chat path")
+        if "emoji" in record and record["emoji"] != f"assets/emojis/{record_id}.gif":
+            raise RuntimeError(f"Manifest record {index} has an invalid emoji path")
+        if "source" in record and (
+            not isinstance(record["source"], str)
+            or not re.fullmatch(r"assets/source/[a-z0-9-]+\.png", record["source"])
+        ):
+            raise RuntimeError(f"Manifest record {index} has an invalid source path")
     return records
 
 

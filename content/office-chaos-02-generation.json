@@ -1,0 +1,55 @@
+{
+  "mode": "existing-artwork-caption-and-motion-remix",
+  "new_ai_artwork": false,
+  "frames": 24,
+  "items": [
+    {
+      "id": "office-chaos-pretend-busy",
+      "source": "assets/source/ai-cat-typing.png",
+      "source_sha256": "51ed17ad34ce9a1adc1d0396fe3c32ab3108f3dcb1cd59c621847b70e60185f9",
+      "gif_sha256": "3f934719b7b1dfdef85c250b7c1cb2c843252989dfa5f5edb397db55c931e649"
+    },
+    {
+      "id": "office-chaos-really-needed",
+      "source": "assets/source/duck-office-no-more.png",
+      "source_sha256": "02950e603b598b009bfb577b92338e037006990d79d05b2106fb99d4fa01e194",
+      "gif_sha256": "8d3b0cf01ab6d4b77aac048e66498be53efa3a2798e95533a17076fa01d9b9a1"
+    },
+    {
+      "id": "office-chaos-brain-offline",
+      "source": "assets/source/ai-cat-loading.png",
+      "source_sha256": "e11fcc1ba30b11faaabc789e2728660794f48b6a5e47466bb9e8dd4f1eb41c9e",
+      "gif_sha256": "3e93272222a5bf1f2c1057ae7fc28421524c37e27903180b39ff17845050dd41"
+    },
+    {
+      "id": "office-chaos-broke-again",
+      "source": "assets/source/ai-cat-wallet.png",
+      "source_sha256": "5eb9ad109fd1d370f34670c66a8200a1c2361031a421db83dd969820a47350b5",
+      "gif_sha256": "effda0fe1f3faeee7f0348a7768a16d68f7cc51f118bee5424c92e3621c16917"
+    },
+    {
+      "id": "office-chaos-monday-soul",
+      "source": "assets/source/ai-cat-shattered.png",
+      "source_sha256": "10ad704b9239453f706403106fb3b7684950cd44d1fcc7462fa9fb8a21d8e7a7",
+      "gif_sha256": "42bf3c89465a61f8a0701bd8added88c57041aea7abe02eae4d5923b554913e5"
+    },
+    {
+      "id": "office-chaos-snack-first",
+      "source": "assets/source/ai-cat-popcorn.png",
+      "source_sha256": "2f01d7f6a56a44f394380f8fe2410715cba1babe07e6b93dff4049cd5269ad42",
+      "gif_sha256": "86838454c99ef1e3d323e75e4e5d91a9c1ed5b75abb3045d7f24d903628d765f"
+    },
+    {
+      "id": "office-chaos-half-received",
+      "source": "assets/source/duck-office-received.png",
+      "source_sha256": "a9c7af34d81c77e34f762642a05016636bfdc46599ce636141eac9722e00e1ba",
+      "gif_sha256": "cd52a24ac04ed066c40ca849d8afce6b9e727805e62e764beb869e3088997219"
+    },
+    {
+      "id": "office-chaos-clock-out",
+      "source": "assets/source/duck-office-off.png",
+      "source_sha256": "584e5da81443620ea1ab481c36edcdfa8ea3f4f8cd97176c99de97869016f1ee",
+      "gif_sha256": "3746ff32e8b240eb96b32b2199c4d5da918fdd621196f96f5ee26b0fd4297514"
+    }
+  ]
+}

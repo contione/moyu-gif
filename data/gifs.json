@@ -11,7 +11,9 @@
     ],
     "file": "assets/gifs/ai-cat-slacking.gif",
     "poster": "assets/posters/ai-cat-slacking.webp",
-    "motion": "摇头 + 屏幕闪动"
+    "motion": "摇头 + 屏幕闪动",
+    "chat": "assets/chat/ai-cat-slacking.gif",
+    "emoji": "assets/emojis/ai-cat-slacking.gif"
   },
   {
     "id": "ai-cat-what",
@@ -25,7 +27,9 @@
     ],
     "file": "assets/gifs/ai-cat-what.gif",
     "poster": "assets/posters/ai-cat-what.webp",
-    "motion": "震动 + 惊叹号"
+    "motion": "震动 + 惊叹号",
+    "chat": "assets/chat/ai-cat-what.gif",
+    "emoji": "assets/emojis/ai-cat-what.gif"
   },
   {
     "id": "ai-cat-salute",
@@ -39,7 +43,9 @@
     ],
     "file": "assets/gifs/ai-cat-salute.gif",
     "poster": "assets/posters/ai-cat-salute.webp",
-    "motion": "弹跳 + 星星"
+    "motion": "弹跳 + 星星",
+    "chat": "assets/chat/ai-cat-salute.gif",
+    "emoji": "assets/emojis/ai-cat-salute.gif"
   },
   {
     "id": "ai-cat-escape",
@@ -53,7 +59,9 @@
     ],
     "file": "assets/gifs/ai-cat-escape.gif",
     "poster": "assets/posters/ai-cat-escape.webp",
-    "motion": "向右跑开 + 残影"
+    "motion": "向右跑开 + 残影",
+    "chat": "assets/chat/ai-cat-escape.gif",
+    "emoji": "assets/emojis/ai-cat-escape.gif"
   },
   {
     "id": "ai-cat-shattered",
@@ -67,7 +75,9 @@
     ],
     "file": "assets/gifs/ai-cat-shattered.gif",
     "poster": "assets/posters/ai-cat-shattered.webp",
-    "motion": "漂浮 + 汗滴"
+    "motion": "漂浮 + 汗滴",
+    "chat": "assets/chat/ai-cat-shattered.gif",
+    "emoji": "assets/emojis/ai-cat-shattered.gif"
   },
   {
     "id": "ai-cat-fine",
@@ -81,7 +91,9 @@
     ],
     "file": "assets/gifs/ai-cat-fine.gif",
     "poster": "assets/posters/ai-cat-fine.webp",
-    "motion": "剧烈震动 + 爆炸线"
+    "motion": "剧烈震动 + 爆炸线",
+    "chat": "assets/chat/ai-cat-fine.gif",
+    "emoji": "assets/emojis/ai-cat-fine.gif"
   },
   {
     "id": "ai-cat-popcorn",
@@ -95,7 +107,9 @@
     ],
     "file": "assets/gifs/ai-cat-popcorn.gif",
     "poster": "assets/posters/ai-cat-popcorn.webp",
-    "motion": "弹跳 + 爆米花飞溅"
+    "motion": "弹跳 + 爆米花飞溅",
+    "chat": "assets/chat/ai-cat-popcorn.gif",
+    "emoji": "assets/emojis/ai-cat-popcorn.gif"
   },
   {
     "id": "ai-cat-understands",
@@ -109,7 +123,9 @@
     ],
     "file": "assets/gifs/ai-cat-understands.gif",
     "poster": "assets/posters/ai-cat-understands.webp",
-    "motion": "点头 + 对勾闪光"
+    "motion": "点头 + 对勾闪光",
+    "chat": "assets/chat/ai-cat-understands.gif",
+    "emoji": "assets/emojis/ai-cat-understands.gif"
   },
   {
     "id": "ai-cat-boss",
@@ -123,7 +139,9 @@
     ],
     "file": "assets/gifs/ai-cat-boss.gif",
     "poster": "assets/posters/ai-cat-boss.webp",
-    "motion": "左右探头 + 警报线"
+    "motion": "左右探头 + 警报线",
+    "chat": "assets/chat/ai-cat-boss.gif",
+    "emoji": "assets/emojis/ai-cat-boss.gif"
   },
   {
     "id": "ai-cat-wallet",
@@ -137,7 +155,9 @@
     ],
     "file": "assets/gifs/ai-cat-wallet.gif",
     "poster": "assets/posters/ai-cat-wallet.webp",
-    "motion": "下坠 + 账单飘落"
+    "motion": "下坠 + 账单飘落",
+    "chat": "assets/chat/ai-cat-wallet.gif",
+    "emoji": "assets/emojis/ai-cat-wallet.gif"
   },
   {
     "id": "ai-cat-typing",
@@ -151,7 +171,9 @@
     ],
     "file": "assets/gifs/ai-cat-typing.gif",
     "poster": "assets/posters/ai-cat-typing.webp",
-    "motion": "高速震动 + 键盘线"
+    "motion": "高速震动 + 键盘线",
+    "chat": "assets/chat/ai-cat-typing.gif",
+    "emoji": "assets/emojis/ai-cat-typing.gif"
   },
   {
     "id": "ai-cat-calm",
@@ -165,7 +187,9 @@
     ],
     "file": "assets/gifs/ai-cat-calm.gif",
     "poster": "assets/posters/ai-cat-calm.webp",
-    "motion": "小幅旋转 + 墨镜反光"
+    "motion": "小幅旋转 + 墨镜反光",
+    "chat": "assets/chat/ai-cat-calm.gif",
+    "emoji": "assets/emojis/ai-cat-calm.gif"
   },
   {
     "id": "ai-cat-loading",
@@ -179,7 +203,9 @@
     ],
     "file": "assets/gifs/ai-cat-loading.gif",
     "poster": "assets/posters/ai-cat-loading.webp",
-    "motion": "左右摇晃 + 烟雾"
+    "motion": "左右摇晃 + 烟雾",
+    "chat": "assets/chat/ai-cat-loading.gif",
+    "emoji": "assets/emojis/ai-cat-loading.gif"
   },
   {
     "id": "ai-cat-really",
@@ -193,7 +219,9 @@
     ],
     "file": "assets/gifs/ai-cat-really.gif",
     "poster": "assets/posters/ai-cat-really.webp",
-    "motion": "捂脸摇头 + 问号"
+    "motion": "捂脸摇头 + 问号",
+    "chat": "assets/chat/ai-cat-really.gif",
+    "emoji": "assets/emojis/ai-cat-really.gif"
   },
   {
     "id": "ai-cat-hurray",
@@ -207,7 +235,9 @@
     ],
     "file": "assets/gifs/ai-cat-hurray.gif",
     "poster": "assets/posters/ai-cat-hurray.webp",
-    "motion": "心形飘起 + 闪光"
+    "motion": "心形飘起 + 闪光",
+    "chat": "assets/chat/ai-cat-hurray.gif",
+    "emoji": "assets/emojis/ai-cat-hurray.gif"
   },
   {
     "id": "ai-cat-clap",
@@ -221,7 +251,9 @@
     ],
     "file": "assets/gifs/ai-cat-clap.gif",
     "poster": "assets/posters/ai-cat-clap.webp",
-    "motion": "慢速鼓掌 + 亮点"
+    "motion": "慢速鼓掌 + 亮点",
+    "chat": "assets/chat/ai-cat-clap.gif",
+    "emoji": "assets/emojis/ai-cat-clap.gif"
   },
   {
     "id": "ai-cat-flat",
@@ -235,7 +267,9 @@
     ],
     "file": "assets/gifs/ai-cat-flat.gif",
     "poster": "assets/posters/ai-cat-flat.webp",
-    "motion": "融化下沉 + 汗滴"
+    "motion": "融化下沉 + 汗滴",
+    "chat": "assets/chat/ai-cat-flat.gif",
+    "emoji": "assets/emojis/ai-cat-flat.gif"
   },
   {
     "id": "ai-cat-panic",
@@ -249,7 +283,9 @@
     ],
     "file": "assets/gifs/ai-cat-panic.gif",
     "poster": "assets/posters/ai-cat-panic.webp",
-    "motion": "原地打转 + 速度线"
+    "motion": "原地打转 + 速度线",
+    "chat": "assets/chat/ai-cat-panic.gif",
+    "emoji": "assets/emojis/ai-cat-panic.gif"
   },
   {
     "id": "ai-cat-coffee",
@@ -263,7 +299,9 @@
     ],
     "file": "assets/gifs/ai-cat-coffee.gif",
     "poster": "assets/posters/ai-cat-coffee.webp",
-    "motion": "颤抖 + 咖啡蒸汽"
+    "motion": "颤抖 + 咖啡蒸汽",
+    "chat": "assets/chat/ai-cat-coffee.gif",
+    "emoji": "assets/emojis/ai-cat-coffee.gif"
   },
   {
     "id": "ai-cat-retired",
@@ -277,7 +315,9 @@
     ],
     "file": "assets/gifs/ai-cat-retired.gif",
     "poster": "assets/posters/ai-cat-retired.webp",
-    "motion": "横向慢移 + 叹气"
+    "motion": "横向慢移 + 叹气",
+    "chat": "assets/chat/ai-cat-retired.gif",
+    "emoji": "assets/emojis/ai-cat-retired.gif"
   },
   {
     "id": "ai-cat-gossip",
@@ -291,7 +331,9 @@
     ],
     "file": "assets/gifs/ai-cat-gossip.gif",
     "poster": "assets/posters/ai-cat-gossip.webp",
-    "motion": "悄悄靠近 + 对话气泡"
+    "motion": "悄悄靠近 + 对话气泡",
+    "chat": "assets/chat/ai-cat-gossip.gif",
+    "emoji": "assets/emojis/ai-cat-gossip.gif"
   },
   {
     "id": "ai-cat-please",
@@ -305,7 +347,9 @@
     ],
     "file": "assets/gifs/ai-cat-please.gif",
     "poster": "assets/posters/ai-cat-please.webp",
-    "motion": "祈求弹跳 + 心形"
+    "motion": "祈求弹跳 + 心形",
+    "chat": "assets/chat/ai-cat-please.gif",
+    "emoji": "assets/emojis/ai-cat-please.gif"
   },
   {
     "id": "ai-cat-thanks",
@@ -319,7 +363,9 @@
     ],
     "file": "assets/gifs/ai-cat-thanks.gif",
     "poster": "assets/posters/ai-cat-thanks.webp",
-    "motion": "鞠躬 + 星星"
+    "motion": "鞠躬 + 星星",
+    "chat": "assets/chat/ai-cat-thanks.gif",
+    "emoji": "assets/emojis/ai-cat-thanks.gif"
   },
   {
     "id": "ai-cat-friday",
@@ -333,7 +379,9 @@
     ],
     "file": "assets/gifs/ai-cat-friday.gif",
     "poster": "assets/posters/ai-cat-friday.webp",
-    "motion": "跳舞 + 彩带"
+    "motion": "跳舞 + 彩带",
+    "chat": "assets/chat/ai-cat-friday.gif",
+    "emoji": "assets/emojis/ai-cat-friday.gif"
   },
   {
     "id": "duck-office-received",
@@ -347,7 +395,9 @@
     ],
     "file": "assets/gifs/duck-office-received.gif",
     "poster": "assets/posters/duck-office-received.webp",
-    "motion": "点头 + 对勾闪光"
+    "motion": "点头 + 对勾闪光",
+    "chat": "assets/chat/duck-office-received.gif",
+    "emoji": "assets/emojis/duck-office-received.gif"
   },
   {
     "id": "duck-office-arrange",
@@ -361,7 +411,9 @@
     ],
     "file": "assets/gifs/duck-office-arrange.gif",
     "poster": "assets/posters/duck-office-arrange.webp",
-    "motion": "弹跳 + 星星"
+    "motion": "弹跳 + 星星",
+    "chat": "assets/chat/duck-office-arrange.gif",
+    "emoji": "assets/emojis/duck-office-arrange.gif"
   },
   {
     "id": "duck-office-working",
@@ -375,7 +427,9 @@
     ],
     "file": "assets/gifs/duck-office-working.gif",
     "poster": "assets/posters/duck-office-working.webp",
-    "motion": "高速震动 + 键盘线"
+    "motion": "高速震动 + 键盘线",
+    "chat": "assets/chat/duck-office-working.gif",
+    "emoji": "assets/emojis/duck-office-working.gif"
   },
   {
     "id": "duck-office-align",
@@ -389,7 +443,9 @@
     ],
     "file": "assets/gifs/duck-office-align.gif",
     "poster": "assets/posters/duck-office-align.webp",
-    "motion": "左右探头 + 气泡"
+    "motion": "左右探头 + 气泡",
+    "chat": "assets/chat/duck-office-align.gif",
+    "emoji": "assets/emojis/duck-office-align.gif"
   },
   {
     "id": "duck-office-priority",
@@ -403,7 +459,9 @@
     ],
     "file": "assets/gifs/duck-office-priority.gif",
     "poster": "assets/posters/duck-office-priority.webp",
-    "motion": "弹跳 + 警报线"
+    "motion": "弹跳 + 警报线",
+    "chat": "assets/chat/duck-office-priority.gif",
+    "emoji": "assets/emojis/duck-office-priority.gif"
   },
   {
     "id": "duck-office-chase",
@@ -417,7 +475,9 @@
     ],
     "file": "assets/gifs/duck-office-chase.gif",
     "poster": "assets/posters/duck-office-chase.webp",
-    "motion": "慢慢靠近 + 问号"
+    "motion": "慢慢靠近 + 问号",
+    "chat": "assets/chat/duck-office-chase.gif",
+    "emoji": "assets/emojis/duck-office-chase.gif"
   },
   {
     "id": "duck-office-confirm",
@@ -431,7 +491,9 @@
     ],
     "file": "assets/gifs/duck-office-confirm.gif",
     "poster": "assets/posters/duck-office-confirm.webp",
-    "motion": "左右摇晃 + 气泡"
+    "motion": "左右摇晃 + 气泡",
+    "chat": "assets/chat/duck-office-confirm.gif",
+    "emoji": "assets/emojis/duck-office-confirm.gif"
   },
   {
     "id": "duck-office-delivered",
@@ -445,7 +507,9 @@
     ],
     "file": "assets/gifs/duck-office-delivered.gif",
     "poster": "assets/posters/duck-office-delivered.webp",
-    "motion": "弹跳 + 对勾闪光"
+    "motion": "弹跳 + 对勾闪光",
+    "chat": "assets/chat/duck-office-delivered.gif",
+    "emoji": "assets/emojis/duck-office-delivered.gif"
   },
   {
     "id": "duck-office-fast",
@@ -459,7 +523,9 @@
     ],
     "file": "assets/gifs/duck-office-fast.gif",
     "poster": "assets/posters/duck-office-fast.webp",
-    "motion": "向右跑开 + 速度线"
+    "motion": "向右跑开 + 速度线",
+    "chat": "assets/chat/duck-office-fast.gif",
+    "emoji": "assets/emojis/duck-office-fast.gif"
   },
   {
     "id": "duck-office-no-more",
@@ -473,7 +539,9 @@
     ],
     "file": "assets/gifs/duck-office-no-more.gif",
     "poster": "assets/posters/duck-office-no-more.webp",
-    "motion": "摇头 + 汗滴"
+    "motion": "摇头 + 汗滴",
+    "chat": "assets/chat/duck-office-no-more.gif",
+    "emoji": "assets/emojis/duck-office-no-more.gif"
   },
   {
     "id": "duck-office-fuel",
@@ -487,7 +555,9 @@
     ],
     "file": "assets/gifs/duck-office-fuel.gif",
     "poster": "assets/posters/duck-office-fuel.webp",
-    "motion": "点头 + 星星"
+    "motion": "点头 + 星星",
+    "chat": "assets/chat/duck-office-fuel.gif",
+    "emoji": "assets/emojis/duck-office-fuel.gif"
   },
   {
     "id": "duck-office-off",
@@ -501,6 +571,136 @@
     ],
     "file": "assets/gifs/duck-office-off.gif",
     "poster": "assets/posters/duck-office-off.webp",
-    "motion": "向右跑开 + 残影"
+    "motion": "向右跑开 + 残影",
+    "chat": "assets/chat/duck-office-off.gif",
+    "emoji": "assets/emojis/duck-office-off.gif"
+  },
+  {
+    "id": "office-chaos-pretend-busy",
+    "title": "我先假装在忙",
+    "category": "打工日常",
+    "tags": [
+      "打工新梗",
+      "摸鱼",
+      "假装忙"
+    ],
+    "file": "assets/gifs/office-chaos-pretend-busy.gif",
+    "poster": "assets/posters/office-chaos-pretend-busy.webp",
+    "motion": "左右探头 + 气泡",
+    "source": "assets/source/ai-cat-typing.png",
+    "chat": "assets/chat/office-chaos-pretend-busy.gif",
+    "emoji": "assets/emojis/office-chaos-pretend-busy.gif"
+  },
+  {
+    "id": "office-chaos-really-needed",
+    "title": "这需求它合理吗",
+    "category": "情绪发疯",
+    "tags": [
+      "打工新梗",
+      "需求",
+      "无语"
+    ],
+    "file": "assets/gifs/office-chaos-really-needed.gif",
+    "poster": "assets/posters/office-chaos-really-needed.webp",
+    "motion": "剧烈摇头 + 问号",
+    "source": "assets/source/duck-office-no-more.png",
+    "chat": "assets/chat/office-chaos-really-needed.gif",
+    "emoji": "assets/emojis/office-chaos-really-needed.gif"
+  },
+  {
+    "id": "office-chaos-brain-offline",
+    "title": "已读但脑子没回",
+    "category": "社交必备",
+    "tags": [
+      "打工新梗",
+      "已读",
+      "大脑离线"
+    ],
+    "file": "assets/gifs/office-chaos-brain-offline.gif",
+    "poster": "assets/posters/office-chaos-brain-offline.webp",
+    "motion": "慢慢靠近 + 问号",
+    "source": "assets/source/ai-cat-loading.png",
+    "chat": "assets/chat/office-chaos-brain-offline.gif",
+    "emoji": "assets/emojis/office-chaos-brain-offline.gif"
+  },
+  {
+    "id": "office-chaos-broke-again",
+    "title": "钱没了班还在",
+    "category": "打工日常",
+    "tags": [
+      "打工新梗",
+      "工资",
+      "没钱"
+    ],
+    "file": "assets/gifs/office-chaos-broke-again.gif",
+    "poster": "assets/posters/office-chaos-broke-again.webp",
+    "motion": "左右摇晃 + 气泡",
+    "source": "assets/source/ai-cat-wallet.png",
+    "chat": "assets/chat/office-chaos-broke-again.gif",
+    "emoji": "assets/emojis/office-chaos-broke-again.gif"
+  },
+  {
+    "id": "office-chaos-monday-soul",
+    "title": "周一精神出走",
+    "category": "情绪发疯",
+    "tags": [
+      "打工新梗",
+      "周一",
+      "灵魂出窍"
+    ],
+    "file": "assets/gifs/office-chaos-monday-soul.gif",
+    "poster": "assets/posters/office-chaos-monday-soul.webp",
+    "motion": "漂浮 + 星星",
+    "source": "assets/source/ai-cat-shattered.png",
+    "chat": "assets/chat/office-chaos-monday-soul.gif",
+    "emoji": "assets/emojis/office-chaos-monday-soul.gif"
+  },
+  {
+    "id": "office-chaos-snack-first",
+    "title": "不干了先吃瓜",
+    "category": "快乐吃瓜",
+    "tags": [
+      "打工新梗",
+      "吃瓜",
+      "摆烂"
+    ],
+    "file": "assets/gifs/office-chaos-snack-first.gif",
+    "poster": "assets/posters/office-chaos-snack-first.webp",
+    "motion": "跳舞 + 彩带",
+    "source": "assets/source/ai-cat-popcorn.png",
+    "chat": "assets/chat/office-chaos-snack-first.gif",
+    "emoji": "assets/emojis/office-chaos-snack-first.gif"
+  },
+  {
+    "id": "office-chaos-half-received",
+    "title": "收到但没完全收到",
+    "category": "社交必备",
+    "tags": [
+      "打工新梗",
+      "收到",
+      "迷惑"
+    ],
+    "file": "assets/gifs/office-chaos-half-received.gif",
+    "poster": "assets/posters/office-chaos-half-received.webp",
+    "motion": "剧烈摇头 + 问号",
+    "source": "assets/source/duck-office-received.png",
+    "chat": "assets/chat/office-chaos-half-received.gif",
+    "emoji": "assets/emojis/office-chaos-half-received.gif"
+  },
+  {
+    "id": "office-chaos-clock-out",
+    "title": "下班速度拉满",
+    "category": "快乐吃瓜",
+    "tags": [
+      "打工新梗",
+      "下班",
+      "开溜"
+    ],
+    "file": "assets/gifs/office-chaos-clock-out.gif",
+    "poster": "assets/posters/office-chaos-clock-out.webp",
+    "motion": "弹跳 + 速度线",
+    "source": "assets/source/duck-office-off.png",
+    "chat": "assets/chat/office-chaos-clock-out.gif",
+    "emoji": "assets/emojis/office-chaos-clock-out.gif"
   }
 ]

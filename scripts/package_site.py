@@ -51,10 +51,34 @@ def main():
                 raise ValueError(f"All frames identical: {identifier}")
         with Image.open(ROOT / record["poster"]) as image:
             image.verify()
+        for field, directory, size, max_bytes in (("chat", "chat", 640, 8 * 1024 * 1024), ("emoji", "emojis", 128, 256 * 1024)):
+            if field not in record:
+                continue
+            relative = record[field]
+            if relative != f"assets/{directory}/{identifier}.gif":
+                raise ValueError(f"Unsafe {field} path: {relative}")
+            source = ROOT / relative
+            if not source.is_file() or source.stat().st_size >= max_bytes:
+                raise ValueError(f"Missing or oversized {field}: {identifier}")
+            with Image.open(source) as image:
+                if image.format != "GIF" or image.size != (size, size) or image.n_frames < 2 or image.info.get("loop") != 0:
+                    raise ValueError(f"Invalid {field} GIF: {identifier}")
+                hashes = set()
+                duration = 0
+                for frame in range(image.n_frames):
+                    image.seek(frame)
+                    hashes.add(hash(image.convert("RGB").tobytes()))
+                    duration += image.info.get("duration", 0)
+                if len(hashes) < 2 or duration <= 0:
+                    raise ValueError(f"Missing animation in {field}: {identifier}")
+            sources.append(source)
     archive = ROOT / "assets/moyu-gifs.zip"
     with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as bundle:
         for record in records:
             bundle.write(ROOT / record["file"], f"gifs/{record['id']}.gif")
+            for field, directory in (("chat", "chat-large"), ("emoji", "emojis")):
+                if field in record:
+                    bundle.write(ROOT / record[field], f"{directory}/{record['id']}.gif")
         bundle.write(ROOT / "ATTRIBUTION.md", "ATTRIBUTION.md")
     target = ROOT / "_site"
     if target.exists():
@@ -68,12 +92,6 @@ def main():
         destination = target / source.relative_to(ROOT)
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
-    emoji_directory = ROOT / "assets" / "emojis"
-    if emoji_directory.is_dir():
-        for source in sorted(emoji_directory.glob("*.gif")):
-            destination = target / source.relative_to(ROOT)
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(source, destination)
     print(f"Validated {len(records)} animated GIFs, created ZIP and static site: {target}")
 
 

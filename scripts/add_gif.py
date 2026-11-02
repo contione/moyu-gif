@@ -14,7 +14,7 @@ from typing import Any
 
 from PIL import Image
 
-from build_gifs import ALLOWED_CATEGORIES, map_asset_path, unique_run_directory
+from build_gifs import ALLOWED_CATEGORIES, OPTIONAL_FIELDS, map_asset_path, unique_run_directory
 
 
 MAX_GIF_SIZE_BYTES = 8 * 1024 * 1024
@@ -113,8 +113,18 @@ def read_manifest(manifest_path: Path) -> list[dict[str, Any]]:
     if not isinstance(records, list):
         fail("Manifest must be a JSON array")
     for index, record in enumerate(records, start=1):
-        if not isinstance(record, dict) or set(record) != MANIFEST_FIELDS:
+        if not isinstance(record, dict) or not MANIFEST_FIELDS.issubset(record) or set(record) - MANIFEST_FIELDS - OPTIONAL_FIELDS:
             fail(f"Manifest record {index} has an unexpected field set")
+        identifier = record.get("id")
+        if "chat" in record and record["chat"] != f"assets/chat/{identifier}.gif":
+            fail(f"Manifest record {index} has an invalid chat path")
+        if "emoji" in record and record["emoji"] != f"assets/emojis/{identifier}.gif":
+            fail(f"Manifest record {index} has an invalid emoji path")
+        if "source" in record and (
+            not isinstance(record["source"], str)
+            or not re.fullmatch(r"assets/source/[a-z0-9-]+\.png", record["source"])
+        ):
+            fail(f"Manifest record {index} has an invalid source path")
     return records
 
 

@@ -4,17 +4,18 @@
 
 - 在线图库：https://contione.github.io/moyu-gif/
 - 仓库：https://github.com/contione/moyu-gif
-- 36 张多帧 GIF：24 张原创打工猫＋12 张参考图衍生的黑帽鸭鸭。旧版 OpenMoji 拼贴表情已全部替换。
+- 44 张多帧 GIF：24 张打工猫＋12 张黑帽鸭鸭＋8 张现有原画衍生的新梗动画。搜索「打工新梗」查看本批。旧版 OpenMoji 拼贴表情已全部替换。
 - 搜索「鸭鸭」或「职场高效」直达新批次：收到、安排、催进度、等拍板、已交付、高效下班等。
-- 鸭鸭的「下载 Emoji」会提供主体放大的 128×128 英文命名 GIF（如 `duck-office-received.gif`），适合 Google Chat 自定义 emoji；网页卡片仍播放带中文字幕的完整 GIF。
+- 全部素材统一提供带字幕的 **640×640 大图 GIF**（`assets/chat/`）和主体紧凑的 **128×128 Emoji**（`assets/emojis/`）。卡片播放、预览、复制链接和默认下载优先使用大图；完整原版仍保留在 `assets/gifs/`。
+- 想在聊天里看大图，请选择「下载大图」并作为图片附件上传；Emoji 的显示大小由 Chat 客户端控制，放大源文件不能强制改变它，紧凑版只减少主体周围留白。
 - 支持中文搜索、分类筛选、本地收藏、随机抽取、预览切换、复制直链、单张与整包下载。
 - 移动端双列布局；关闭动效会切换静态预览；默认尊重系统「减少动态效果」。
 
 ## 在 Google Chat 中使用
 
 1. **复制链接**：点击卡片的「复制链接」，粘贴到聊天框并发送。复制的是 `.gif` URL，不是图片二进制；Chat 是否展开为动图由客户端与组织设置决定。
-2. **下载并上传**：点击「下载」，将 `.gif` 作为图片文件上传到聊天。不要截图，截图是静态的。
-3. **整包带走**：首页下载 ZIP，包含全部 GIF 和素材署名说明。
+2. **下载大图并上传**：点击「下载大图」，将 640×640 的 `.gif` 作为图片文件上传到聊天。不要截图，截图是静态的。需要自定义表情时另选「下载 Emoji」。
+3. **整包带走**：首页下载 ZIP，`chat-large/` 是 640px 大图，`emojis/` 是紧凑 Emoji，`gifs/` 是完整原版，另含素材署名说明。
 
 本站不连接 Google 账号，不会自动向 Chat 发送消息，也不会自动注册自定义表情。收藏保存在当前浏览器的 localStorage，清理浏览器数据会丢失收藏。
 
@@ -53,7 +54,10 @@ rtk python scripts/add_gif.py --file "C:/path/meeting.gif" --id meeting-again --
 
 ## 本地预览和校验
 
+下载 ZIP 是构建产物，不纳入 Git；本地预览前先打包，GitHub Actions 发布时也会自动生成。
+
 ```powershell
+rtk python scripts/package_site.py
 rtk python -m http.server 4192 --bind 127.0.0.1
 ```
 
@@ -131,3 +135,9 @@ ATTRIBUTION.md                    素材来源和授权
 ## 授权和隐私
 
 当前图片的生成来源见 [ATTRIBUTION.md](ATTRIBUTION.md)，不要将旧版 OpenMoji 的许可自动套用到新生成图上。历史版本中的 OpenMoji 素材仍应遵守其原许可证。项目没有分析跟踪脚本、没有服务端、没有 API 密钥；请勿将公司内部表情或含个人信息的图直接上传公开仓库。
+
+## 全量大图与新梗维护
+
+新增素材后运行 `rtk python scripts/build_chat_assets.py`，统一生成 640px 带字幕大图和 128px 紧凑 Emoji，并写入清单可选字段 `chat`、`emoji`。该命令保留原始 GIF，将全部新导出文件另存到 `Pictures/AI` 的唯一时间目录；随后运行 `rtk python scripts/package_site.py` 校验并打包。
+
+`content/office-chaos-02.json` 记录 8 张「打工新梗」的字幕、动效和引用原画，`content/office-chaos-02-generation.json` 记录来源与文件哈希。这批由现有原画重新编排字幕和动画，并非新生成的 AI 原画。对应入口为 `rtk python scripts/build_remix_batch.py --manifest content/office-chaos-02.json`；已存在的 ID 会被拒绝，请勿重复导入。新批次应使用不同 ID 和新清单。

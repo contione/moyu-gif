@@ -34,6 +34,7 @@ from replace_ai_batch import (
 
 LIVE_FILES = ("data/gifs.json", "assets/moyu-gifs.zip")
 WATCHED_PATHS = (*LIVE_FILES, *STATIC_SITE_FILES, "assets/gifs", "assets/posters", "assets/source", "_site")
+OPTIONAL_FIELDS = {"chat", "emoji", "source"}
 
 
 def parse_args() -> argparse.Namespace:
@@ -68,8 +69,8 @@ def read_batch_manifest(path: Path) -> list[dict[str, Any]]:
         raise RuntimeError("Manifest must be a non-empty array")
     identifiers: set[str] = set()
     for record in records:
-        if not isinstance(record, dict) or set(record) != REQUIRED_FIELDS:
-            raise RuntimeError(f"Each record must contain exactly {sorted(REQUIRED_FIELDS)}")
+        if not isinstance(record, dict) or not REQUIRED_FIELDS.issubset(record) or set(record) - REQUIRED_FIELDS - OPTIONAL_FIELDS:
+            raise RuntimeError(f"Each record must contain {sorted(REQUIRED_FIELDS)} and only optional fields {sorted(OPTIONAL_FIELDS)}")
         identifier = record["id"]
         if (
             not isinstance(identifier, str)
@@ -88,14 +89,37 @@ def read_batch_manifest(path: Path) -> list[dict[str, Any]]:
             raise RuntimeError(f"Invalid tags: {identifier}")
         if record["file"] != f"assets/gifs/{identifier}.gif" or record["poster"] != f"assets/posters/{identifier}.webp":
             raise RuntimeError(f"Asset paths must derive from the id: {identifier}")
+        if "chat" in record and record["chat"] != f"assets/chat/{identifier}.gif":
+            raise RuntimeError(f"Invalid chat path: {identifier}")
+        if "emoji" in record and record["emoji"] != f"assets/emojis/{identifier}.gif":
+            raise RuntimeError(f"Invalid emoji path: {identifier}")
+        if "source" in record and (
+            not isinstance(record["source"], str)
+            or not re.fullmatch(r"assets/source/[a-z0-9-]+\.png", record["source"])
+        ):
+            raise RuntimeError(f"Invalid source path: {identifier}")
     return records
 
 
 def asset_paths(records: list[dict[str, Any]], include_sources: bool = False) -> list[str]:
-    paths = [record[field] for record in records for field in ("file", "poster")]
+    paths = [record[field] for record in records for field in ("file", "poster", "chat", "emoji") if field in record]
     if include_sources:
-        paths.extend(f"assets/source/{record['id']}.png" for record in records)
+        paths.extend(f"assets/source/{record['id']}.png" for record in records if "source" not in record)
     return paths
+
+
+def validate_append_sources(
+    records: list[dict[str, Any]], images_dir: Path, repository_root: Path
+) -> dict[str, Path]:
+    generated_records = [record for record in records if "source" not in record]
+    source_paths = validate_sources(generated_records, images_dir) if generated_records else {}
+    for record in records:
+        if "source" not in record:
+            continue
+        source_path = safe_path(repository_root, record["source"])
+        validate_source_image(source_path)
+        source_paths[record["id"]] = source_path
+    return source_paths
 
 
 def snapshot(root: Path, paths: tuple[str, ...] | list[str]) -> dict[str, str | None]:
@@ -265,15 +289,16 @@ def append_batch(arguments: argparse.Namespace) -> Path | None:
         raise RuntimeError("Existing _site must be a directory")
     validate_generated_outputs(old_records, repository_root)
     load_font(font_path)
-    source_paths = validate_sources(records, images_dir)
-    source_hashes = {identifier: validate_source_image(safe_path(images_dir, path.name)) for identifier, path in source_paths.items()}
-    if len(set(source_hashes.values())) != len(records):
+    source_paths = validate_append_sources(records, images_dir, repository_root)
+    source_hashes = {identifier: validate_source_image(path) for identifier, path in source_paths.items()}
+    generated_hashes = [source_hashes[record["id"]] for record in records if "source" not in record]
+    if len(set(generated_hashes)) != len(generated_hashes):
         raise RuntimeError("Duplicate PNG SHA256 content")
     existing_source_hashes = {
         value for relative, value in expected_live.items()
         if relative.startswith("assets/source/") and relative.lower().endswith(".png")
     }
-    if existing_source_hashes.intersection(source_hashes.values()):
+    if existing_source_hashes.intersection(generated_hashes):
         raise RuntimeError("PNG SHA256 duplicates an existing source")
     if arguments.check_only:
         return None
@@ -292,12 +317,13 @@ def append_batch(arguments: argparse.Namespace) -> Path | None:
     for record in records:
         identifier = record["id"]
         original = originals / f"{identifier}.png"
-        shutil.copy2(safe_path(images_dir, original.name), original)
+        shutil.copy2(source_paths[identifier], original)
         if sha256_file(original) != source_hashes[identifier]:
             raise RuntimeError(f"Source changed before backup: {identifier}")
-        destination = stage / "assets/source" / original.name
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(original, destination)
+        if "source" not in record:
+            destination = stage / "assets/source" / original.name
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(original, destination)
         with Image.open(original) as image:
             tile = Image.new("RGBA", image.size, "white")
             tile.alpha_composite(image.convert("RGBA"))
@@ -315,7 +341,7 @@ def append_batch(arguments: argparse.Namespace) -> Path | None:
     if sha256_file(manifest_path) != manifest_hash:
         raise RuntimeError("Input manifest changed during build")
     for identifier, expected_hash in source_hashes.items():
-        if sha256_file(safe_path(images_dir, f"{identifier}.png")) != expected_hash:
+        if not source_paths[identifier].is_file() or sha256_file(source_paths[identifier]) != expected_hash:
             raise RuntimeError(f"Source changed during build: {identifier}")
     deploy_staged_append(records, merged_records, stage, repository_root, expected_live)
     return run_directory

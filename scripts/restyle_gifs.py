@@ -37,6 +37,7 @@ from replace_ai_batch import (
 LIVE_MANIFEST_RELATIVE = Path("data/gifs.json")
 DUCK_PREFIX = "duck-office-"
 FRAME_COUNT = 20
+CREATIVE_FIELDS = ("id", "title", "category", "tags", "file", "poster", "motion")
 
 
 def parse_args() -> argparse.Namespace:
@@ -89,7 +90,12 @@ def validate_selection(
 ) -> dict[str, Path]:
     live_by_id = {record["id"]: record for record in live_records}
     missing = [record["id"] for record in selected if record["id"] not in live_by_id]
-    mismatched = [record["id"] for record in selected if live_by_id.get(record["id"]) != record]
+    mismatched = [
+        record["id"]
+        for record in selected
+        if live_by_id.get(record["id"]) is not None
+        and comparable_record(live_by_id[record["id"]]) != comparable_record(record)
+    ]
     if missing:
         raise RuntimeError(f"Selected records are not present in data/gifs.json: {', '.join(missing)}")
     if mismatched:
@@ -100,12 +106,19 @@ def validate_selection(
     validate_generated_outputs(selected, repository_root)
     source_paths: dict[str, Path] = {}
     for record in selected:
-        source = safe_path(repository_root, f"assets/source/{record['id']}.png")
+        source = safe_path(repository_root, record.get("source", f"assets/source/{record['id']}.png"))
         if not source.is_file() or source.is_symlink():
             raise RuntimeError(f"Source PNG not found or is linked: {source}")
         validate_source_image(source)
         source_paths[record["id"]] = source
     return source_paths
+
+
+def comparable_record(record: dict[str, Any]) -> dict[str, Any]:
+    comparable = {field: record[field] for field in CREATIVE_FIELDS}
+    if "source" in record:
+        comparable["source"] = record["source"]
+    return comparable
 
 
 def validate_repository_inputs(repository_root: Path, live_records: list[dict[str, Any]]) -> None:
@@ -177,7 +190,7 @@ def deploy(
         LIVE_SITE_RELATIVE.as_posix(),
         *STATIC_SITE_FILES,
         *asset_paths(live_records),
-        *(f"assets/source/{record['id']}.png" for record in selected),
+        *(record.get("source", f"assets/source/{record['id']}.png") for record in selected),
     ]
     if snapshot(repository_root, watched) != expected_snapshot:
         raise RuntimeError("Live files changed during build; restyle aborted")
@@ -260,7 +273,7 @@ def ensure_source_hashes_unchanged(
     expected_hashes: dict[str, str],
 ) -> None:
     for record in selected:
-        source = safe_path(repository_root, f"assets/source/{record['id']}.png")
+        source = safe_path(repository_root, record.get("source", f"assets/source/{record['id']}.png"))
         if not source.is_file() or sha256_file(source) != expected_hashes[record["id"]]:
             raise RuntimeError(f"Source PNG changed during build: {source}")
 
@@ -283,7 +296,7 @@ def restyle(arguments: argparse.Namespace) -> Path | None:
             LIVE_SITE_RELATIVE.as_posix(),
             *STATIC_SITE_FILES,
             *asset_paths(live_records),
-            *(f"assets/source/{record['id']}.png" for record in selected),
+            *(record.get("source", f"assets/source/{record['id']}.png") for record in selected),
         ],
     )
     if arguments.check_only:

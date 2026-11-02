@@ -40,15 +40,15 @@ function toast(message) {
 }
 
 function imageUrl(item) {
-  return animated ? item.file : item.poster;
+  return animated ? mainAssetUrl(item) : item.poster;
 }
 
-function emojiUrl(item) {
-  return item.id.startsWith("duck-office-") ? `assets/emojis/${item.id}.gif` : item.file;
+function mainAssetUrl(item) {
+  return item.chat || item.file;
 }
 
-function downloadLabel(item) {
-  return item.id.startsWith("duck-office-") ? "下载 Emoji" : "下载 GIF";
+function mainDownloadLabel(item) {
+  return item.chat ? "下载大图" : "下载 GIF";
 }
 
 function setFavoriteButton(button, item) {
@@ -74,7 +74,7 @@ function toggleFavorite(item) {
 }
 
 async function copyLink(item) {
-  const url = new URL(item.file, document.baseURI).href;
+  const url = new URL(mainAssetUrl(item), document.baseURI).href;
   try {
     await navigator.clipboard.writeText(url);
     toast("GIF 链接已复制，去群里快乐一下！");
@@ -147,11 +147,21 @@ function makeCard(item) {
   copy.addEventListener("click", () => copyLink(item));
   const download = element("a", "button outline");
   download.innerHTML = ICONS.download;
-  download.append(document.createTextNode(downloadLabel(item)));
-  download.href = emojiUrl(item);
+  download.append(document.createTextNode(mainDownloadLabel(item)));
+  download.href = mainAssetUrl(item);
   download.download = `${item.id}.gif`;
-  download.setAttribute("aria-label", `${downloadLabel(item)}：${item.title}`);
+  download.setAttribute("aria-label", `${mainDownloadLabel(item)}：${item.title}`);
+  download.classList.add("main-download");
   actions.append(copy, download);
+  if (item.emoji) {
+    const emojiDownload = element("a", "button outline emoji-download");
+    emojiDownload.innerHTML = ICONS.download;
+    emojiDownload.append(document.createTextNode("下载 Emoji"));
+    emojiDownload.href = item.emoji;
+    emojiDownload.download = `${item.id}-emoji.gif`;
+    emojiDownload.setAttribute("aria-label", `下载 Emoji：${item.title}`);
+    actions.append(emojiDownload);
+  }
   content.append(heading, actions);
   card.append(art, content);
   return card;
@@ -183,9 +193,17 @@ function openPreview(item) {
   byId("preview-title").textContent = item.title;
   byId("preview-category").textContent = item.category;
   byId("preview-tags").textContent = item.tags.map((tag) => `#${tag}`).join("  ");
-  byId("preview-download").href = emojiUrl(item);
+  byId("preview-download").href = mainAssetUrl(item);
   byId("preview-download").download = `${item.id}.gif`;
-  byId("preview-download").textContent = downloadLabel(item);
+  byId("preview-download").textContent = mainDownloadLabel(item);
+  byId("preview-download").setAttribute("aria-label", `${mainDownloadLabel(item)}：${item.title}`);
+  const previewEmojiDownload = byId("preview-emoji-download");
+  previewEmojiDownload.hidden = !item.emoji;
+  if (item.emoji) {
+    previewEmojiDownload.href = item.emoji;
+    previewEmojiDownload.download = `${item.id}-emoji.gif`;
+    previewEmojiDownload.setAttribute("aria-label", `下载 Emoji：${item.title}`);
+  }
   setFavoriteButton(byId("preview-favorite"), item);
   byId("preview-dialog").style.setProperty("--card-bg", COLORS[items.indexOf(item) % COLORS.length]);
   const collection = previewCollection();
@@ -257,7 +275,8 @@ function validateData(data) {
   const ids = new Set();
   if (!Array.isArray(data) || !data.length) throw new Error("表情清单为空或格式错误");
   for (const item of data) {
-    if (!item || !/^[a-z0-9-]+$/.test(item.id) || ids.has(item.id) || typeof item.title !== "string" || typeof item.category !== "string" || !Array.isArray(item.tags) || item.tags.some((tag) => typeof tag !== "string") || !/^assets\/gifs\/[a-z0-9-]+\.gif$/.test(item.file) || !/^assets\/posters\/[a-z0-9-]+\.(webp|png|jpg)$/.test(item.poster)) throw new Error("表情清单存在无效或重复条目");
+    const validOptionalAsset = (value, pattern) => value === undefined || (typeof value === "string" && pattern.test(value));
+    if (!item || !/^[a-z0-9-]+$/.test(item.id) || ids.has(item.id) || typeof item.title !== "string" || typeof item.category !== "string" || !Array.isArray(item.tags) || item.tags.some((tag) => typeof tag !== "string") || !/^assets\/gifs\/[a-z0-9-]+\.gif$/.test(item.file) || !/^assets\/posters\/[a-z0-9-]+\.(webp|png|jpg)$/.test(item.poster) || !validOptionalAsset(item.chat, /^assets\/chat\/[a-z0-9-]+\.gif$/) || !validOptionalAsset(item.emoji, /^assets\/emojis\/[a-z0-9-]+\.gif$/)) throw new Error("表情清单存在无效或重复条目");
     ids.add(item.id);
   }
   return data;
