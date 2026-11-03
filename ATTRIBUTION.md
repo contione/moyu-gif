@@ -4,10 +4,10 @@
 
 - 本批新增 12 张纯文字 GIF；加入后图库合计 56 张。既有 44 张素材及其历史批次计数保持不变。
 - 本批不是 AI 生图，不含人物、参考图或外部原画。全部文字画面由本地 Pillow 字体排版和本项目 `build_text_batch.py` 生成。
-- 标题主码为 `PING`、`PONG`、`402`、`404`、`500`、`503`、`200 OK`、`NULL`、`NaN`、`LGTM`、`git push`、`localhost`，每张配中文程序员梗；搜索标签包含「纯文字」「程序员」。这些代码主码只是笑话的视觉元素，中文文案不构成 HTTP、网络教程或正式释义。
+- 标题主码为 `PING`、`PONG`、`402`、`404`、`500`、`503`、`200 OK`、`NULL`、`NaN`、`LGTM`、`git push`、`localhost`；中文程序员梗保留在网站 title 和搜索标签中，不绘制进图片。搜索标签包含「纯文字」「程序员」。640×640 大图和 128×128 Emoji 均只保留居中的大号代码，不含中文副标题或下划线。这些代码主码只是笑话的视觉元素，中文文案不构成 HTTP、网络教程或正式释义。
 - 批次清单：`content/dev-text-01.json`；制作配置：`content/dev-text-01-designs.json`；来源与文件 SHA256：`content/dev-text-01-generation.json`。
-- 生成入口：`rtk python scripts/build_text_batch.py --manifest content/dev-text-01-designs.json`。每张输出 640×640 带中文字幕的大图 GIF，以及 128×128 代码主体 Emoji。
-- chat 与 Emoji 输出先备份至 `Pictures/AI` 下的唯一时间目录，再复制入仓库；旧 44 张 GIF、原画、清单和来源记录不因本批次改写。
+- 默认生成入口：`rtk python scripts/build_text_batch.py --manifest content/dev-text-01-designs.json`；默认模式拒绝重复 ID。需要替换这 12 张时使用 `rtk python scripts/build_text_batch.py --manifest content/dev-text-01-designs.json --replace`。
+- 替换前，原文件与相关清单先备份至 `Pictures/AI` 下的唯一时间目录中的 `previous/`，再复制新的 640×640 无字幕大图和 128×128 无字幕 Emoji 入仓库；旧 44 张 GIF、原画、清单和来源记录不因本批次改写。
 
 ## 2026-11-03：全量大图及打工新梗 8 张
 

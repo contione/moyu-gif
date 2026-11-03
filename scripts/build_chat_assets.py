@@ -56,7 +56,10 @@ def main() -> None:
             relative = f"assets/{folder}/{identifier}.gif"
             original = originals / relative
             original.parent.mkdir(parents=True, exist_ok=True)
-            converter(source, original)
+            if field == "emoji":
+                converter(source, original, remove_subtitle="纯文字" not in record.get("tags", []))
+            else:
+                converter(source, original)
             destination = ROOT / relative
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(original, destination)

@@ -66,13 +66,12 @@ def make_frame(frame: Image.Image, box: tuple[int, int, int, int]) -> Image.Imag
     return canvas.resize((OUTPUT_SIZE, OUTPUT_SIZE), Image.Resampling.LANCZOS)
 
 
-def convert(source: Path, destination: Path) -> None:
+def convert(source: Path, destination: Path, *, remove_subtitle: bool = True) -> None:
     with Image.open(source) as image:
-        content_height = round(image.height * (1 - SUBTITLE_FRACTION))
-        frames = [
-            frame.copy().convert("RGB").crop((0, 0, image.width, content_height))
-            for frame in ImageSequence.Iterator(image)
-        ]
+        frames = [frame.copy().convert("RGB") for frame in ImageSequence.Iterator(image)]
+        if remove_subtitle:
+            content_height = round(image.height * (1 - SUBTITLE_FRACTION))
+            frames = [frame.crop((0, 0, image.width, content_height)) for frame in frames]
         durations = [frame.info.get("duration", 80) for frame in ImageSequence.Iterator(image)]
     box = content_box(frames)
     output_frames = [make_frame(frame, box).quantize(colors=128, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE) for frame in frames]
@@ -108,9 +107,10 @@ def main() -> int:
         destination = root / "assets" / "emojis" / f"{identifier}.gif"
         if not source.is_file():
             raise RuntimeError(f"Missing source GIF: {source}")
-        jobs.append((source, destination))
+        remove_subtitle = "纯文字" not in record.get("tags", [])
+        jobs.append((source, destination, remove_subtitle))
     if arguments.check_only:
-        for _, destination in jobs:
+        for _, destination, _ in jobs:
             if not destination.is_file():
                 raise RuntimeError(f"Missing emoji GIF: {destination}")
             with Image.open(destination) as image:
@@ -120,8 +120,8 @@ def main() -> int:
                 raise RuntimeError(f"Emoji GIF exceeds 256 KB: {destination}")
         print(f"Emoji preflight passed: {len(jobs)} files")
         return 0
-    for source, destination in jobs:
-        convert(source, destination)
+    for source, destination, remove_subtitle in jobs:
+        convert(source, destination, remove_subtitle=remove_subtitle)
     print(f"Built {len(jobs)} compact Google Chat emoji GIFs")
     return 0
 

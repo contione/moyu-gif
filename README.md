@@ -6,7 +6,7 @@
 - 仓库：https://github.com/contione/moyu-gif
 - 56 张多帧 GIF：24 张打工猫＋12 张黑帽鸭鸭＋8 张现有原画衍生的新梗动画＋12 张纯文字程序员梗。搜索「打工新梗」或「纯文字」「程序员」查看对应批次。旧版 OpenMoji 拼贴表情已全部替换。
 - 搜索「鸭鸭」或「职场高效」直达新批次：收到、安排、催进度、等拍板、已交付、高效下班等。
-- 全部素材统一提供带字幕的 **640×640 大图 GIF**（`assets/chat/`）和主体紧凑的 **128×128 Emoji**（`assets/emojis/`）。卡片播放、预览、复制链接和默认下载优先使用大图；完整原版仍保留在 `assets/gifs/`。
+- 旧 44 张素材提供带字幕的 **640×640 大图 GIF**（`assets/chat/`）和主体紧凑的 **128×128 Emoji**（`assets/emojis/`）；12 张 `dev-text-*` 纯文字批次只保留居中的大号代码，不绘制中文副标题或下划线。卡片播放、预览、复制链接和默认下载优先使用大图；完整原版仍保留在 `assets/gifs/`。
 - 想在聊天里看大图，请选择「下载大图」并作为图片附件上传；Emoji 的显示大小由 Chat 客户端控制，放大源文件不能强制改变它，紧凑版只减少主体周围留白。
 - 支持中文搜索、分类筛选、本地收藏、随机抽取、预览切换、复制直链、单张与整包下载。
 - 移动端双列布局；关闭动效会切换静态预览；默认尊重系统「减少动态效果」。
@@ -79,9 +79,9 @@ rtk python scripts/package_site.py
 
 ### 纯文字程序员梗
 
-新增的 12 张 `dev-text-*` 不使用 AI 生图，也不包含人物或外部原画；由本地 Pillow 字体排版生成。标题主码依次为 `PING`、`PONG`、`402`、`404`、`500`、`503`、`200 OK`、`NULL`、`NaN`、`LGTM`、`git push`、`localhost`，每张配中文字幕程序员梗。代码主码只是文字梗的视觉元素，中文文案不构成 HTTP、网络教程或任何正式释义。
+新增的 12 张 `dev-text-*` 不使用 AI 生图，也不包含人物或外部原画；由本地 Pillow 字体排版生成。标题主码依次为 `PING`、`PONG`、`402`、`404`、`500`、`503`、`200 OK`、`NULL`、`NaN`、`LGTM`、`git push`、`localhost`；中文程序员梗保留在网站 title 和搜索标签中，不绘制进图片。640×640 大图与 128×128 Emoji 均只保留居中的大号代码，不含中文副标题或下划线。代码主码只是文字梗的视觉元素，中文文案不构成 HTTP、网络教程或任何正式释义。
 
-批次清单为 `content/dev-text-01.json`，制作配置为 `content/dev-text-01-designs.json`，来源与文件哈希为 `content/dev-text-01-generation.json`。生成入口为 `rtk python scripts/build_text_batch.py --manifest content/dev-text-01-designs.json`。每张同时输出 640×640 带中文字幕的大图 GIF 和 128×128 代码主体 Emoji；chat 与 Emoji 输出先全部备份到 `Pictures/AI` 下的唯一时间目录，再复制入项目。该批次追加后总量为 56 张，既有 44 张素材保持不变。
+批次清单为 `content/dev-text-01.json`，制作配置为 `content/dev-text-01-designs.json`，来源与文件哈希为 `content/dev-text-01-generation.json`。默认生成入口为 `rtk python scripts/build_text_batch.py --manifest content/dev-text-01-designs.json`，已存在的 ID 会拒绝重复；需要替换这 12 张时使用 `rtk python scripts/build_text_batch.py --manifest content/dev-text-01-designs.json --replace`。替换前，原文件与相关清单会备份到 `Pictures/AI` 下的唯一时间目录中的 `previous/`，再发布新的 640×640 大图和 128×128 Emoji。该批次追加后总量为 56 张，既有 44 张素材保持不变。
 
 ### 鸭鸭漫画字幕
 
@@ -144,7 +144,7 @@ ATTRIBUTION.md                    素材来源和授权
 
 ## 全量大图与新梗维护
 
-新增素材后运行 `rtk python scripts/build_chat_assets.py`，统一生成 640px 带字幕大图和 128px 紧凑 Emoji，并写入清单可选字段 `chat`、`emoji`。该命令保留原始 GIF，将全部新导出文件另存到 `Pictures/AI` 的唯一时间目录；随后运行 `rtk python scripts/package_site.py` 校验并打包。
+新增素材后运行 `rtk python scripts/build_chat_assets.py`，统一生成 640px 大图和 128px 紧凑 Emoji，并写入清单可选字段 `chat`、`emoji`；旧 44 张保留字幕，`dev-text-*` 批次保持无中文副标题和下划线。该命令保留原始 GIF，将全部新导出文件另存到 `Pictures/AI` 的唯一时间目录；随后运行 `rtk python scripts/package_site.py` 校验并打包。
 
 `content/office-chaos-02.json` 记录 8 张「打工新梗」的字幕、动效和引用原画，`content/office-chaos-02-generation.json` 记录来源与文件哈希。这批由现有原画重新编排字幕和动画，并非新生成的 AI 原画。对应入口为 `rtk python scripts/build_remix_batch.py --manifest content/office-chaos-02.json`；已存在的 ID 会被拒绝，请勿重复导入。新批次应使用不同 ID 和新清单。
 
