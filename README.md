@@ -4,7 +4,7 @@
 
 - 在线图库：https://contione.github.io/moyu-gif/
 - 仓库：https://github.com/contione/moyu-gif
-- 44 张多帧 GIF：24 张打工猫＋12 张黑帽鸭鸭＋8 张现有原画衍生的新梗动画。搜索「打工新梗」查看本批。旧版 OpenMoji 拼贴表情已全部替换。
+- 56 张多帧 GIF：24 张打工猫＋12 张黑帽鸭鸭＋8 张现有原画衍生的新梗动画＋12 张纯文字程序员梗。搜索「打工新梗」或「纯文字」「程序员」查看对应批次。旧版 OpenMoji 拼贴表情已全部替换。
 - 搜索「鸭鸭」或「职场高效」直达新批次：收到、安排、催进度、等拍板、已交付、高效下班等。
 - 全部素材统一提供带字幕的 **640×640 大图 GIF**（`assets/chat/`）和主体紧凑的 **128×128 Emoji**（`assets/emojis/`）。卡片播放、预览、复制链接和默认下载优先使用大图；完整原版仍保留在 `assets/gifs/`。
 - 想在聊天里看大图，请选择「下载大图」并作为图片附件上传；Emoji 的显示大小由 Chat 客户端控制，放大源文件不能强制改变它，紧凑版只减少主体周围留白。
@@ -77,6 +77,12 @@ rtk python scripts/package_site.py
 
 **原画本身是静态 PNG，不是模型直接生成的视频。** 本地脚本为每张原画添加摇头、弹跳、震动、位移、烟雾等循环动效和中文字幕，输出真正包含不同帧的 320×320 GIF；同时导出 WebP 静态封面。网站播放和下载使用 GIF，关闭动效后才使用封面。当前批次没有使用旧 OpenMoji 图片作为输入。
 
+### 纯文字程序员梗
+
+新增的 12 张 `dev-text-*` 不使用 AI 生图，也不包含人物或外部原画；由本地 Pillow 字体排版生成。标题主码依次为 `PING`、`PONG`、`402`、`404`、`500`、`503`、`200 OK`、`NULL`、`NaN`、`LGTM`、`git push`、`localhost`，每张配中文字幕程序员梗。代码主码只是文字梗的视觉元素，中文文案不构成 HTTP、网络教程或任何正式释义。
+
+批次清单为 `content/dev-text-01.json`，制作配置为 `content/dev-text-01-designs.json`，来源与文件哈希为 `content/dev-text-01-generation.json`。生成入口为 `rtk python scripts/build_text_batch.py --manifest content/dev-text-01-designs.json`。每张同时输出 640×640 带中文字幕的大图 GIF 和 128×128 代码主体 Emoji；chat 与 Emoji 输出先全部备份到 `Pictures/AI` 下的唯一时间目录，再复制入项目。该批次追加后总量为 56 张，既有 44 张素材保持不变。
+
 ### 鸭鸭漫画字幕
 
 12 张鸭鸭的关键词使用彩色填充、深色描边、白色外描边和轻阴影，按语气分别加入盖章回弹、挤压、探头、加速和等待圆点。每个 1.6 秒循环的后半段，字幕保持约 0.8 秒不动以便阅读；角色仍可继续运动。不使用整句彩虹闪烁，也不隐藏整句文字。关闭动效时显示字幕停稳后的完整封面。
@@ -141,3 +147,5 @@ ATTRIBUTION.md                    素材来源和授权
 新增素材后运行 `rtk python scripts/build_chat_assets.py`，统一生成 640px 带字幕大图和 128px 紧凑 Emoji，并写入清单可选字段 `chat`、`emoji`。该命令保留原始 GIF，将全部新导出文件另存到 `Pictures/AI` 的唯一时间目录；随后运行 `rtk python scripts/package_site.py` 校验并打包。
 
 `content/office-chaos-02.json` 记录 8 张「打工新梗」的字幕、动效和引用原画，`content/office-chaos-02-generation.json` 记录来源与文件哈希。这批由现有原画重新编排字幕和动画，并非新生成的 AI 原画。对应入口为 `rtk python scripts/build_remix_batch.py --manifest content/office-chaos-02.json`；已存在的 ID 会被拒绝，请勿重复导入。新批次应使用不同 ID 和新清单。
+
+`content/dev-text-01.json` 记录 12 张「纯文字」「程序员」梗的标题、中文文案与输出路径，`content/dev-text-01-designs.json` 记录 Pillow 排版、颜色、动效和标签，`content/dev-text-01-generation.json` 记录来源与文件哈希。该批次无 AI 原画、无人物，使用 `rtk python scripts/build_text_batch.py --manifest content/dev-text-01-designs.json` 生成；已存在的 ID 会被拒绝，请勿重复导入。

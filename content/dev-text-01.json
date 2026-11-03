@@ -1,0 +1,218 @@
+[
+  {
+    "id": "dev-text-ping",
+    "title": "PING · 在吗？人呢？",
+    "category": "社交必备",
+    "tags": [
+      "纯文字",
+      "程序员",
+      "代码梗",
+      "ping",
+      "在吗",
+      "网络"
+    ],
+    "motion": "文字 cursor + 阅读停顿",
+    "file": "assets/gifs/dev-text-ping.gif",
+    "poster": "assets/posters/dev-text-ping.webp",
+    "chat": "assets/chat/dev-text-ping.gif",
+    "emoji": "assets/emojis/dev-text-ping.gif"
+  },
+  {
+    "id": "dev-text-pong",
+    "title": "PONG · 活着，没在干活",
+    "category": "社交必备",
+    "tags": [
+      "纯文字",
+      "程序员",
+      "代码梗",
+      "pong",
+      "回复",
+      "摸鱼"
+    ],
+    "motion": "文字 bounce + 阅读停顿",
+    "file": "assets/gifs/dev-text-pong.gif",
+    "poster": "assets/posters/dev-text-pong.webp",
+    "chat": "assets/chat/dev-text-pong.gif",
+    "emoji": "assets/emojis/dev-text-pong.gif"
+  },
+  {
+    "id": "dev-text-402",
+    "title": "402 · 余额不足，禁止加班",
+    "category": "打工日常",
+    "tags": [
+      "纯文字",
+      "程序员",
+      "代码梗",
+      "402",
+      "工资",
+      "加班"
+    ],
+    "motion": "文字 stamp + 阅读停顿",
+    "file": "assets/gifs/dev-text-402.gif",
+    "poster": "assets/posters/dev-text-402.webp",
+    "chat": "assets/chat/dev-text-402.gif",
+    "emoji": "assets/emojis/dev-text-402.gif"
+  },
+  {
+    "id": "dev-text-404",
+    "title": "404 · 脑子暂时找不到",
+    "category": "情绪发疯",
+    "tags": [
+      "纯文字",
+      "程序员",
+      "代码梗",
+      "404",
+      "脑子",
+      "离线"
+    ],
+    "motion": "文字 shake + 阅读停顿",
+    "file": "assets/gifs/dev-text-404.gif",
+    "poster": "assets/posters/dev-text-404.webp",
+    "chat": "assets/chat/dev-text-404.gif",
+    "emoji": "assets/emojis/dev-text-404.gif"
+  },
+  {
+    "id": "dev-text-500",
+    "title": "500 · 精神服务器炸了",
+    "category": "情绪发疯",
+    "tags": [
+      "纯文字",
+      "程序员",
+      "代码梗",
+      "500",
+      "崩溃",
+      "服务器"
+    ],
+    "motion": "文字 shake + 阅读停顿",
+    "file": "assets/gifs/dev-text-500.gif",
+    "poster": "assets/posters/dev-text-500.webp",
+    "chat": "assets/chat/dev-text-500.gif",
+    "emoji": "assets/emojis/dev-text-500.gif"
+  },
+  {
+    "id": "dev-text-503",
+    "title": "503 · 本人暂不提供服务",
+    "category": "打工日常",
+    "tags": [
+      "纯文字",
+      "程序员",
+      "代码梗",
+      "503",
+      "下班",
+      "拒绝"
+    ],
+    "motion": "文字 drift + 阅读停顿",
+    "file": "assets/gifs/dev-text-503.gif",
+    "poster": "assets/posters/dev-text-503.webp",
+    "chat": "assets/chat/dev-text-503.gif",
+    "emoji": "assets/emojis/dev-text-503.gif"
+  },
+  {
+    "id": "dev-text-200-ok",
+    "title": "200 OK · 嘴上收到，脑子没到",
+    "category": "社交必备",
+    "tags": [
+      "纯文字",
+      "程序员",
+      "代码梗",
+      "200",
+      "OK",
+      "收到"
+    ],
+    "motion": "文字 stamp + 阅读停顿",
+    "file": "assets/gifs/dev-text-200-ok.gif",
+    "poster": "assets/posters/dev-text-200-ok.webp",
+    "chat": "assets/chat/dev-text-200-ok.gif",
+    "emoji": "assets/emojis/dev-text-200-ok.gif"
+  },
+  {
+    "id": "dev-text-null",
+    "title": "NULL · 需求为空，快乐加倍",
+    "category": "快乐吃瓜",
+    "tags": [
+      "纯文字",
+      "程序员",
+      "代码梗",
+      "NULL",
+      "需求",
+      "空值"
+    ],
+    "motion": "文字 drift + 阅读停顿",
+    "file": "assets/gifs/dev-text-null.gif",
+    "poster": "assets/posters/dev-text-null.webp",
+    "chat": "assets/chat/dev-text-null.gif",
+    "emoji": "assets/emojis/dev-text-null.gif"
+  },
+  {
+    "id": "dev-text-nan",
+    "title": "NaN · 算了，算不出来",
+    "category": "情绪发疯",
+    "tags": [
+      "纯文字",
+      "程序员",
+      "代码梗",
+      "NaN",
+      "数学",
+      "算了"
+    ],
+    "motion": "文字 shake + 阅读停顿",
+    "file": "assets/gifs/dev-text-nan.gif",
+    "poster": "assets/posters/dev-text-nan.webp",
+    "chat": "assets/chat/dev-text-nan.gif",
+    "emoji": "assets/emojis/dev-text-nan.gif"
+  },
+  {
+    "id": "dev-text-lgtm",
+    "title": "LGTM · 看过了，但没完全看",
+    "category": "社交必备",
+    "tags": [
+      "纯文字",
+      "程序员",
+      "代码梗",
+      "LGTM",
+      "review",
+      "审查"
+    ],
+    "motion": "文字 stamp + 阅读停顿",
+    "file": "assets/gifs/dev-text-lgtm.gif",
+    "poster": "assets/posters/dev-text-lgtm.webp",
+    "chat": "assets/chat/dev-text-lgtm.gif",
+    "emoji": "assets/emojis/dev-text-lgtm.gif"
+  },
+  {
+    "id": "dev-text-git-push",
+    "title": "git push · 推了，剩下靠玄学",
+    "category": "打工日常",
+    "tags": [
+      "纯文字",
+      "程序员",
+      "代码梗",
+      "git",
+      "push",
+      "部署"
+    ],
+    "motion": "文字 bounce + 阅读停顿",
+    "file": "assets/gifs/dev-text-git-push.gif",
+    "poster": "assets/posters/dev-text-git-push.webp",
+    "chat": "assets/chat/dev-text-git-push.gif",
+    "emoji": "assets/emojis/dev-text-git-push.gif"
+  },
+  {
+    "id": "dev-text-localhost",
+    "title": "local host · 我这儿明明能跑",
+    "category": "打工日常",
+    "tags": [
+      "纯文字",
+      "程序员",
+      "代码梗",
+      "localhost",
+      "本地",
+      "bug"
+    ],
+    "motion": "文字 cursor + 阅读停顿",
+    "file": "assets/gifs/dev-text-localhost.gif",
+    "poster": "assets/posters/dev-text-localhost.webp",
+    "chat": "assets/chat/dev-text-localhost.gif",
+    "emoji": "assets/emojis/dev-text-localhost.gif"
+  }
+]

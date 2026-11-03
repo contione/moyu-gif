@@ -1,0 +1,189 @@
+{
+  "mode": "local-text-typesetting",
+  "description": "Original developer jokes, not protocol documentation. Text only, no AI image generation.",
+  "items": [
+    {
+      "id": "dev-text-ping",
+      "lines": [
+        "PING"
+      ],
+      "caption": "在吗？人呢？",
+      "category": "社交必备",
+      "color": "#16734D",
+      "effect": "cursor",
+      "tags": [
+        "ping",
+        "在吗",
+        "网络"
+      ]
+    },
+    {
+      "id": "dev-text-pong",
+      "lines": [
+        "PONG"
+      ],
+      "caption": "活着，没在干活",
+      "category": "社交必备",
+      "color": "#235CCE",
+      "effect": "bounce",
+      "tags": [
+        "pong",
+        "回复",
+        "摸鱼"
+      ]
+    },
+    {
+      "id": "dev-text-402",
+      "lines": [
+        "402"
+      ],
+      "caption": "余额不足，禁止加班",
+      "category": "打工日常",
+      "color": "#AC4A0B",
+      "effect": "stamp",
+      "tags": [
+        "402",
+        "工资",
+        "加班"
+      ]
+    },
+    {
+      "id": "dev-text-404",
+      "lines": [
+        "404"
+      ],
+      "caption": "脑子暂时找不到",
+      "category": "情绪发疯",
+      "color": "#B02B47",
+      "effect": "shake",
+      "tags": [
+        "404",
+        "脑子",
+        "离线"
+      ]
+    },
+    {
+      "id": "dev-text-500",
+      "lines": [
+        "500"
+      ],
+      "caption": "精神服务器炸了",
+      "category": "情绪发疯",
+      "color": "#9D2A62",
+      "effect": "shake",
+      "tags": [
+        "500",
+        "崩溃",
+        "服务器"
+      ]
+    },
+    {
+      "id": "dev-text-503",
+      "lines": [
+        "503"
+      ],
+      "caption": "本人暂不提供服务",
+      "category": "打工日常",
+      "color": "#6143B5",
+      "effect": "drift",
+      "tags": [
+        "503",
+        "下班",
+        "拒绝"
+      ]
+    },
+    {
+      "id": "dev-text-200-ok",
+      "lines": [
+        "200",
+        "OK"
+      ],
+      "caption": "嘴上收到，脑子没到",
+      "category": "社交必备",
+      "color": "#16734D",
+      "effect": "stamp",
+      "tags": [
+        "200",
+        "OK",
+        "收到"
+      ]
+    },
+    {
+      "id": "dev-text-null",
+      "lines": [
+        "NULL"
+      ],
+      "caption": "需求为空，快乐加倍",
+      "category": "快乐吃瓜",
+      "color": "#235CCE",
+      "effect": "drift",
+      "tags": [
+        "NULL",
+        "需求",
+        "空值"
+      ]
+    },
+    {
+      "id": "dev-text-nan",
+      "lines": [
+        "NaN"
+      ],
+      "caption": "算了，算不出来",
+      "category": "情绪发疯",
+      "color": "#AC4A0B",
+      "effect": "shake",
+      "tags": [
+        "NaN",
+        "数学",
+        "算了"
+      ]
+    },
+    {
+      "id": "dev-text-lgtm",
+      "lines": [
+        "LGTM"
+      ],
+      "caption": "看过了，但没完全看",
+      "category": "社交必备",
+      "color": "#6143B5",
+      "effect": "stamp",
+      "tags": [
+        "LGTM",
+        "review",
+        "审查"
+      ]
+    },
+    {
+      "id": "dev-text-git-push",
+      "lines": [
+        "git",
+        "push"
+      ],
+      "caption": "推了，剩下靠玄学",
+      "category": "打工日常",
+      "color": "#16734D",
+      "effect": "bounce",
+      "tags": [
+        "git",
+        "push",
+        "部署"
+      ]
+    },
+    {
+      "id": "dev-text-localhost",
+      "lines": [
+        "local",
+        "host"
+      ],
+      "caption": "我这儿明明能跑",
+      "category": "打工日常",
+      "color": "#B02B47",
+      "effect": "cursor",
+      "tags": [
+        "localhost",
+        "本地",
+        "bug"
+      ]
+    }
+  ]
+}

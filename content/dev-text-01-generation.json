@@ -1,0 +1,119 @@
+{
+  "mode": "local-text-typesetting",
+  "new_ai_artwork": false,
+  "fonts": [
+    "consolab.ttf",
+    "msyhbd.ttc"
+  ],
+  "design_sha256": "cf25fd755aeb8fc781add3c4432a587918ef9d405a8bc22136d10e7a23f937e5",
+  "items": [
+    {
+      "id": "dev-text-ping",
+      "files": {
+        "file": "039434e937f3d69b9f7937eb05a73c537dee5206e8e2181d576fc8db3e467c63",
+        "poster": "c82f6d5d412ce9cddf39206f777f203db18f4ee6fbb4710d811e513f5425bd15",
+        "chat": "50b7baa222d669cef453f07ab26c046f943b352bf2ab0b857b2f41fd2bbb319d",
+        "emoji": "66b1a16749ecbd9bf43463e235cb73c48b9f19f9f5a7091a903f7c447849547c"
+      }
+    },
+    {
+      "id": "dev-text-pong",
+      "files": {
+        "file": "cd54494de3eb0284eb5d7edb2feea723f6b485d92e3ab98cf58f94bedf0bd877",
+        "poster": "c45eb2223d4f64381b664e3d81aff200d97a8a065358a7ccdc003ff5b7da95d1",
+        "chat": "d9ee104d94c118285007a5e9400b4935c4d8a0b1d3919e0678458033e35d803f",
+        "emoji": "17eccdb5f4c2aac813804a43c184be5ed82ac7e590fbde8e1e35ad9f6019477f"
+      }
+    },
+    {
+      "id": "dev-text-402",
+      "files": {
+        "file": "952828f12d357baf204e9736c72dbba0decbb7bdbe6361e32ddd3b6d1b53deb7",
+        "poster": "00b2ec29311dcf58a2d028344fe363b6b638187036e5f9dd83c89a373425c69d",
+        "chat": "450ebbf59623baed2ac379a64f1c7ea606f7dd0570fa8473f707d586e16f8972",
+        "emoji": "d1c0710aa9bf398b77f6fa11f9e257ba7015576712f322c7971309c389ae1e90"
+      }
+    },
+    {
+      "id": "dev-text-404",
+      "files": {
+        "file": "5e5cb14cd985e0a35cad9fbab05a6a9c44dd86b8be57e90f69ba98c5386d9afe",
+        "poster": "7ed46904a6f0bc78d023ea2e9d4e6f5ae1c9e24739a0437e345899140239f23b",
+        "chat": "e469776547842a7f3a7e708a407b29dfbc71dbb610b314215dc98964d3fa1797",
+        "emoji": "0f2fd21f65876901bc756f7d0f3e2b56b81e59b5efe0f4da49b4b30ecf723263"
+      }
+    },
+    {
+      "id": "dev-text-500",
+      "files": {
+        "file": "01dcde32e026b24414b5cf3a5f1fa9d6f1c792570c57a288621d6431563d1fcd",
+        "poster": "b283ad1995bb5c2ad5a85d4869b8b3783a4765a03614798a8c7be524f44a400c",
+        "chat": "cd21f3a0ae789cba8f664b042fd23005470c96a4902bb5380ea86262195c53f4",
+        "emoji": "6e5390569af80cb3ffaacb5fbfd14f802a2fe1f23484134e01862e7b79d9d098"
+      }
+    },
+    {
+      "id": "dev-text-503",
+      "files": {
+        "file": "16570daaa9d5fdcb5a8f688f755e0df3840fa744791964ae601f988b3dd8c22c",
+        "poster": "72dd9e06348c1aff8f20f4d4842688eae575c825799b78b66945b8d2b2ff069f",
+        "chat": "9ba8d18d348235e6035da6da6018917eb13ca5b6632acaea7bd5bb3b2a3e882e",
+        "emoji": "783c76c7a6891adbaf241a84b65a0cb4d51023faaa24b5173afba5d5b226da59"
+      }
+    },
+    {
+      "id": "dev-text-200-ok",
+      "files": {
+        "file": "7d263fd347d4c303506666d9cc4a732f080d2a45c1d066908055dbedfea29ce3",
+        "poster": "f1aa9fcd2d9f3560209e7f54ceba2600e1829501e7998627d1622aaeb2710da7",
+        "chat": "174f2d7ecbfbddfce689eca27b6cd7e066d60023a793e93189048a7bd9bb1eee",
+        "emoji": "acd5db5795cacac5bc1039e54c7e634eee79078f077e4831201fe81cda21569a"
+      }
+    },
+    {
+      "id": "dev-text-null",
+      "files": {
+        "file": "c2d94163de3e4ceab77fcd3c9b53511d4fa669e5e3ea57bb23886e273eef149f",
+        "poster": "a125a15609ea97570fa85d8828c35cf6b610553a24ddb112ca51eab54b29c034",
+        "chat": "376a8141c735a53d5c875cab643cda31bb086b9671cc449930ce650a7e1da430",
+        "emoji": "015c340c200ddc9f0808e96f69ef4d5dd4ff9c55cb685888a6ba02bad5466206"
+      }
+    },
+    {
+      "id": "dev-text-nan",
+      "files": {
+        "file": "083c6391a594067caab30ceefa744065607de55ea82e88f141c16606ad08a25c",
+        "poster": "b8a477dd55058384840123a56c8521ef12b5fb30f4a7ed9158add7b69e04a872",
+        "chat": "45df69839605e388644989b6a46087ed2a2e43a07cd50198e9d919b25e4a46d7",
+        "emoji": "705d32c315ad6852fcf9ef4d543266d62f2897cf2347dd6d7314f5653d930855"
+      }
+    },
+    {
+      "id": "dev-text-lgtm",
+      "files": {
+        "file": "e99dea7b3d5df539c016178bf1394a652c49b0fcbb222e1951c66ecb871f22b5",
+        "poster": "8d1ce7df82cf438c85f9cd3dcfbc7a71360c86515a5b568a4be45e69b5af693d",
+        "chat": "3320a05a536e81d8c1179c4bbba256f620ca1edbffcc41a8d526bc0a0d62459e",
+        "emoji": "7487b1c922bc74a8347ceae247cefc1d926dc35135787519fefebba46fecd981"
+      }
+    },
+    {
+      "id": "dev-text-git-push",
+      "files": {
+        "file": "28ea6c2f59febd6278dd1fca7d6d2a6e0311858c8c051965954c1e1df950b463",
+        "poster": "017be9eb2f184482973c06346631d444188d1bf950729e3bd615c4bf0444dcf4",
+        "chat": "99d373271349c4f9945d5bb27fd648369f2eaf47d7dc65e9fef43c61e0eaa03f",
+        "emoji": "e470a9ce061fae67c534c8429328952c336277b5b7167283a4bf98fbe40331bc"
+      }
+    },
+    {
+      "id": "dev-text-localhost",
+      "files": {
+        "file": "499333637b69062f798bdf31038d80e8ff0def5ae6f72302ac19e3229bcdec30",
+        "poster": "0b9f77a653b5c986e14ee5d505bb42ed852b00234ad744c06490597feb1b3070",
+        "chat": "a251775c55bd5a58f3cc9c761cb977fcafdf1d4b45b6ecff2a14e318e3d9e66f",
+        "emoji": "3c4f760e42a1f9d3558f72e8a9335653c606aa32fb560fc2c6536fbf18278213"
+      }
+    }
+  ]
+}
